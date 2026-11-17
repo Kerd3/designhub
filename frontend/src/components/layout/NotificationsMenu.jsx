@@ -42,11 +42,11 @@ export function NotificationsMenu({ notifications }) {
           role="region"
           aria-label="Notifications"
           onKeyDown={(e) => { if (e.key === 'Escape') { e.stopPropagation(); close(); } }}
-          className="fixed inset-x-3 top-16 z-40 animate-dialog-in rounded-lg bg-surface shadow-lg ring-1 ring-border sm:absolute sm:inset-x-auto sm:right-0 sm:top-full sm:mt-2 sm:w-96"
+          className="fixed inset-x-3 top-16 z-40 origin-top-right animate-pop-in rounded-lg bg-surface shadow-lg ring-1 ring-border sm:absolute sm:inset-x-auto sm:right-0 sm:top-full sm:mt-2 sm:w-96"
         >
-          <div className="flex items-center justify-between gap-3 px-4 pb-2 pt-3.5">
+          <div className="flex items-center justify-between gap-3 px-4 pb-2 pt-4">
             <h2 className="font-display text-body font-bold text-ink">Notifications</h2>
-            <button type="button" onClick={markAllRead} disabled={!unreadCount} className="inline-flex items-center gap-1.5 rounded-sm text-small font-medium text-primary hover:underline disabled:text-muted disabled:no-underline">
+            <button type="button" onClick={markAllRead} disabled={!unreadCount} className="inline-flex items-center gap-2 rounded-sm text-small font-medium text-primary hover:underline disabled:text-muted disabled:no-underline">
               <CheckCheck aria-hidden="true" className="size-4" /> Mark all as read
             </button>
           </div>
@@ -60,30 +60,30 @@ export function NotificationsMenu({ notifications }) {
                 const Icon = ICONS[item.kind];
                 const body = (
                   <>
-                    <span className={cn('mt-0.5 grid size-8 shrink-0 place-items-center rounded-full', item.unread ? 'bg-primary-soft text-primary' : 'bg-surface-2 text-muted')}>
+                    <span className={cn('mt-1 grid size-8 shrink-0 place-items-center rounded-full', item.unread ? 'bg-primary-soft text-primary' : 'bg-surface-2 text-muted')}>
                       <Icon aria-hidden="true" className="size-4" />
                     </span>
                     <span className="min-w-0 flex-1">
                       <span className={cn('block text-small text-ink', item.unread && 'font-semibold')}>{item.title}</span>
                       <span className="block text-caption text-muted">{item.detail} · {timeAgo(item.at)}</span>
                     </span>
-                    {item.unread && <span className="mt-2 size-2 shrink-0 rounded-full bg-primary"><span className="visually-hidden">Unread</span></span>}
+                    {item.unread && <span className="icon-align-2 size-2 shrink-0 rounded-full bg-primary"><span className="visually-hidden">Unread</span></span>}
                   </>
                 );
                 return (
                   <li key={item.id}>
                     {item.to ? (
-                      <Link to={item.to} onClick={() => setOpen(false)} className="flex gap-3 rounded-md px-2 py-2.5 hover:bg-surface-2">{body}</Link>
+                      <Link to={item.to} onClick={() => setOpen(false)} className="flex gap-3 rounded-md px-2 py-3 hover:bg-surface-2">{body}</Link>
                     ) : (
-                      <div className="flex gap-3 px-2 py-2.5">{body}</div>
+                      <div className="flex gap-3 px-2 py-3">{body}</div>
                     )}
                   </li>
                 );
               })}
             </ul>
           </div>
-          <div className="bg-surface-2 px-4 py-2.5 sm:rounded-b-lg">
-            <Link to="/workspace/settings?tab=notifications" onClick={() => setOpen(false)} className="inline-flex items-center gap-1.5 text-small font-medium text-muted hover:text-ink">
+          <div className="bg-surface-2 px-4 py-3 sm:rounded-b-lg">
+            <Link to="/workspace/settings?tab=notifications" onClick={() => setOpen(false)} className="inline-flex items-center gap-2 text-small font-medium text-muted hover:text-ink">
               <Settings2 aria-hidden="true" className="size-4" /> Notification preferences
             </Link>
           </div>

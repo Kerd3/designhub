@@ -47,7 +47,7 @@ function ServiceSpecimen({ slug }) {
     case 'frontend-development':
       return (
         <figure className="w-full min-w-0 max-w-xl">
-          <pre tabIndex={0} aria-label="Example React component code" className="overflow-x-auto rounded-lg bg-inverse p-5 text-[0.8125rem] leading-relaxed text-inverse-ink"><code>{COMPONENT_CODE}</code></pre>
+          <pre tabIndex={0} aria-label="Example React component code" className="overflow-x-auto rounded-lg bg-inverse p-5 text-caption leading-relaxed text-inverse-ink"><code>{COMPONENT_CODE}</code></pre>
           <figcaption className="mt-3 text-small text-muted">Components accept variants and states, so every screen behaves the same way.</figcaption>
         </figure>
       );
@@ -67,7 +67,7 @@ function ServiceSpecimen({ slug }) {
             {SWATCHES.map(([name, cls]) => (
               <div key={name}>
                 <div className={cn('aspect-square rounded-md', cls, name === 'Surface' && 'ring-1 ring-border')} />
-                <p className="mt-1.5 text-caption font-medium text-ink">{name}</p>
+                <p className="mt-2 text-caption font-medium text-ink">{name}</p>
               </div>
             ))}
           </div>
@@ -82,7 +82,7 @@ function ServiceSpecimen({ slug }) {
     case 'api-integration':
       return (
         <figure className="w-full min-w-0 max-w-xl">
-          <pre tabIndex={0} aria-label="Example API request and response" className="overflow-x-auto rounded-lg bg-inverse p-5 text-[0.8125rem] leading-relaxed text-inverse-ink"><code>{API_CODE}</code></pre>
+          <pre tabIndex={0} aria-label="Example API request and response" className="overflow-x-auto rounded-lg bg-inverse p-5 text-caption leading-relaxed text-inverse-ink"><code>{API_CODE}</code></pre>
           <figcaption className="mt-3 text-small text-muted">Every integration ships with loading, empty and error states designed in.</figcaption>
         </figure>
       );
@@ -101,7 +101,7 @@ function ServiceSection({ service, index }) {
         </div>
         <div className="flex flex-col justify-center lg:py-8">
           <div data-reveal className="flex items-center gap-3">
-            <span className={cn('grid size-12 shrink-0 place-items-center rounded-md text-ink', service.tint === 'bg-surface-3' ? 'bg-surface-2' : service.tint)}>
+            <span className="grid size-12 shrink-0 place-items-center rounded-md bg-surface text-ink ring-1 ring-border">
               <service.icon aria-hidden="true" className="size-6" />
             </span>
             <h2 id={`${service.slug}-title`} className="font-display text-h2 font-bold text-ink">{service.name}</h2>
@@ -110,10 +110,10 @@ function ServiceSection({ service, index }) {
           <div data-reveal style={{ '--reveal-index': 2 }} className="mt-8 grid gap-8 sm:grid-cols-[1.4fr_1fr]">
             <div>
               <h3 className="font-sans text-small font-semibold text-ink">What is included</h3>
-              <ul className="mt-3 flex flex-col gap-2.5">
+              <ul className="mt-3 flex flex-col gap-3">
                 {service.includes.map((item) => (
-                  <li key={item} className="flex gap-2.5 text-body text-ink">
-                    <Check aria-hidden="true" className="mt-1 size-4 shrink-0 text-primary" /> {item}
+                  <li key={item} className="flex gap-3 text-body text-ink">
+                    <Check aria-hidden="true" className="icon-align-4 size-4 shrink-0 text-primary" /> {item}
                   </li>
                 ))}
               </ul>
@@ -123,7 +123,7 @@ function ServiceSection({ service, index }) {
               <p className="mt-3 inline-flex items-center gap-2 text-body text-ink"><Clock aria-hidden="true" className="size-4 text-muted" /> {service.timeline}</p>
               <Link
                 to={`/contact?type=${encodeURIComponent(service.inquiryType)}`}
-                className="group mt-6 flex w-fit items-center gap-1.5 rounded-sm text-small font-semibold text-primary hover:underline underline-offset-4"
+                className="group mt-6 flex w-fit items-center gap-2 rounded-sm text-small font-semibold text-primary hover:underline underline-offset-4"
               >
                 Discuss a {service.name.toLowerCase()} project
                 <ArrowRight aria-hidden="true" className="size-4 transition-transform group-hover:translate-x-0.5" />
@@ -200,19 +200,19 @@ export default function ServicesPage() {
         {services.map((service, i) => <ServiceSection key={service.slug} service={service} index={i} />)}
       </div>
 
-      <section aria-labelledby="process-steps-title" className="section-space bg-inverse text-inverse-ink">
+      <section aria-labelledby="process-steps-title" className="section-space bg-surface-2 text-ink">
         <div className="page-container">
           <div className="axis-grid items-end">
             <h2 id="process-steps-title" data-reveal className="font-display text-h1 font-bold">The same four stages, every time</h2>
-            <p data-reveal className="max-w-md text-lead text-inverse-muted">You always know which stage we are in, what it produces and what comes next.</p>
+            <p data-reveal className="max-w-md text-lead text-ink">You always know which stage we are in, what it produces and what comes next.</p>
           </div>
           <ol className="mt-16 grid gap-10 sm:grid-cols-2 lg:mt-24 lg:grid-cols-4 lg:gap-8">
             {process.map((step, i) => (
-              <li key={step.name} data-reveal style={{ '--reveal-index': i }} className="flex flex-col rounded-lg bg-white/[0.06] p-6">
+              <li key={step.name} data-reveal style={{ '--reveal-index': i }} className="flex flex-col rounded-lg bg-surface p-6 shadow-sm ring-1 ring-border">
                 <h3 className="font-display text-h2 font-bold">{step.name}</h3>
-                <p className="mt-4 text-body text-inverse-muted"><strong className="font-semibold text-inverse-ink">{step.runIn}</strong> {step.text}</p>
-                <ul className="mt-6 flex flex-wrap gap-1.5 pt-2" aria-label={`${step.name} deliverables`}>
-                  {step.deliverables.map((d) => <li key={d} className="rounded-full bg-white/10 px-3 py-1 text-caption font-medium text-inverse-ink">{d}</li>)}
+                <p className="mt-4 text-body text-muted"><strong className="font-semibold text-ink">{step.runIn}</strong> {step.text}</p>
+                <ul className="mt-6 flex flex-wrap gap-2 pt-2" aria-label={`${step.name} deliverables`}>
+                  {step.deliverables.map((d) => <li key={d} className="rounded-full bg-surface-2 px-3 py-1 text-caption font-medium text-ink">{d}</li>)}
                 </ul>
               </li>
             ))}

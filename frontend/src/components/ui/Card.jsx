@@ -29,7 +29,7 @@ export function CardHeader({ title, description, action, titleAs: Title = 'h2', 
   return (
     <div className={cn('mb-4 flex items-start justify-between gap-4', className)}>
       <div className="min-w-0">
-        <Title id={id} className="font-display text-h3 font-bold text-ink">{title}</Title>
+        <Title id={id} className="font-sans text-body font-semibold text-ink">{title}</Title>
         {description && <p className="mt-1 text-small text-muted">{description}</p>}
       </div>
       {action && <div className="shrink-0">{action}</div>}

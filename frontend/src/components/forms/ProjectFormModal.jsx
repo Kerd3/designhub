@@ -71,7 +71,7 @@ export function ProjectFormModal({ open, onClose, project, clients, team, onSubm
           <Select label="Status" required options={PROJECT_STATUSES.map((s) => ({ value: s, label: labelFor(s) }))} error={errors.status?.message} {...register('status')} />
           <Select label="Priority" required options={PRIORITIES.map((p) => ({ value: p, label: labelFor(p) }))} error={errors.priority?.message} {...register('priority')} />
         </div>
-        <div className="flex flex-col gap-1.5">
+        <div className="flex flex-col gap-2">
           <label htmlFor="project-progress" className="flex justify-between text-small font-medium text-ink">
             Completion <span className="tabular-nums text-muted">{Number.isFinite(progress) ? progress : 0}%</span>
           </label>

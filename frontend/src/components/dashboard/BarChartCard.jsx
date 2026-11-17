@@ -10,7 +10,7 @@ function useChartTokens() {
   const read = () => {
     const s = getComputedStyle(document.documentElement);
     const v = (name) => s.getPropertyValue(name).trim();
-    return { series: v('--color-chart-1'), grid: v('--color-chart-grid'), axis: v('--color-chart-axis'), ink: v('--color-ink'), muted: v('--color-muted'), surface: v('--color-surface') };
+    return { series: v('--color-chart-bar'), grid: v('--color-chart-grid'), axis: v('--color-chart-axis'), ink: v('--color-ink'), muted: v('--color-muted'), surface: v('--color-surface') };
   };
   const [tokens, setTokens] = useState(read);
   // Re-read after the theme attribute has been applied by the layout.
@@ -57,7 +57,7 @@ export function BarChartCard({ title, description, data, valueLabel = 'items', a
               type="button"
               onClick={() => setShowTable((s) => !s)}
               aria-pressed={showTable}
-              className="inline-flex h-9 items-center gap-1.5 rounded-md px-2.5 text-small font-medium text-muted hover:bg-surface-2 hover:text-ink"
+              className="inline-flex h-9 items-center gap-2 rounded-md px-3 text-small font-medium text-muted hover:bg-surface-2 hover:text-ink"
             >
               {showTable ? <BarChart3 aria-hidden="true" className="size-4" /> : <Table2 aria-hidden="true" className="size-4" />}
               {showTable ? 'Chart' : 'Table'}

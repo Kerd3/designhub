@@ -29,7 +29,7 @@ export function IconButton({ icon: Icon, label, variant = 'ghost', size = 'md', 
         <span
           aria-hidden="true"
           data-badge={badge}
-          className="absolute -right-0.5 -top-0.5 grid min-w-4.5 place-items-center rounded-full bg-danger px-1 text-[11px] font-semibold leading-4.5 text-white before:content-[attr(data-badge)] dark:text-bg"
+          className="absolute -right-1 -top-1 grid min-w-5 place-items-center rounded-full bg-secondary px-1 text-caption font-semibold leading-5 text-bg ring-2 ring-bg before:content-[attr(data-badge)]"
         />
       ) : null}
     </button>

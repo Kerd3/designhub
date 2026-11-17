@@ -48,7 +48,7 @@ test.describe('Workspace features', () => {
   test('dashboard shows statistics computed from the dataset, charts and lists', async ({ page }) => {
     await page.goto('/workspace');
     const stats = { 'Total Projects': '10', 'Active Projects': '4', 'Completed Projects': '3', 'Total Clients': '7', 'Pending Tasks': '14', 'New Inquiries': '3' };
-    for (const [label, value] of Object.entries(stats)) await expect(page.getByTestId(`stat-${label}`)).toHaveText(value);
+    for (const [label, value] of Object.entries(stats)) await expect(page.getByTestId(`stat-${label.toLowerCase().replace(' ', '-')}`)).toHaveText(value);
     await expect(page.getByRole('heading', { name: 'Projects by status' })).toBeVisible();
     await expect(page.locator('.recharts-bar-rectangle').first()).toBeVisible();
     await page.getByRole('button', { name: 'Table' }).first().click();
@@ -240,7 +240,7 @@ test.describe('Workspace features', () => {
     await page.getByRole('link', { name: 'See it in the workspace' }).click();
     await expect(page.getByRole('button', { name: /^Fernwood Florist/ })).toBeVisible();
     await page.goto('/workspace');
-    await expect(page.getByTestId('stat-New Inquiries')).toHaveText('4');
+    await expect(page.getByTestId('stat-new-inquiries')).toHaveText('4');
   });
 
   test('team directory search, department filter and details', async ({ page }) => {
@@ -281,7 +281,7 @@ test.describe('Workspace features', () => {
 
   test('global search finds records across the workspace', async ({ page }) => {
     await page.goto('/workspace');
-    await expect(page.getByTestId('stat-Total Projects')).toHaveText('10');
+    await expect(page.getByTestId('stat-total-projects')).toHaveText('10');
     await page.keyboard.press('Control+k');
     const dialog = page.getByRole('dialog', { name: 'Search the workspace' });
     await dialog.getByRole('searchbox').fill('kettle');

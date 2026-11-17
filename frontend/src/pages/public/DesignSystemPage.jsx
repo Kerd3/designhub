@@ -73,12 +73,12 @@ export default function DesignSystemPage() {
     <div className="page-container pb-24 pt-14 lg:pt-24">
       <h1 className="font-display text-display font-extrabold text-ink">Design system</h1>
       <p className="mt-6 max-w-[56ch] text-lead text-ink">
-        The tokens and components behind every DesignHub screen. Each one lives once in code (<code className="rounded-sm bg-surface-2 px-1.5 py-0.5 text-[0.9em]">src/styles/index.css</code> and <code className="rounded-sm bg-surface-2 px-1.5 py-0.5 text-[0.9em]">src/components/ui</code>) and is documented in <code className="rounded-sm bg-surface-2 px-1.5 py-0.5 text-[0.9em]">docs/design-system.md</code>.
+        The tokens and components behind every DesignHub screen. Each one lives once in code (<code className="rounded-sm bg-surface-2 px-2 py-1 text-[0.9em]">src/styles/index.css</code> and <code className="rounded-sm bg-surface-2 px-2 py-1 text-[0.9em]">src/components/ui</code>) and is documented in <code className="rounded-sm bg-surface-2 px-2 py-1 text-[0.9em]">docs/design-system.md</code>.
       </p>
       <nav aria-label="Design system sections" className="mt-8">
         <ul className="flex flex-wrap gap-2">
           {SECTIONS.map(([id, label]) => (
-            <li key={id}><a href={`#${id}`} className="inline-flex h-9 items-center rounded-full bg-surface-2 px-3.5 text-small font-medium text-ink hover:bg-surface-3">{label}</a></li>
+            <li key={id}><a href={`#${id}`} className="inline-flex h-9 items-center rounded-full bg-surface-2 px-4 text-small font-medium text-ink hover:bg-surface-3">{label}</a></li>
           ))}
         </ul>
       </nav>
@@ -112,7 +112,7 @@ export default function DesignSystemPage() {
       <Block id="space" title="Spacing, radius and shadow" description="A 4px base grid. Four radii. Shadows only on things that float: menus, dialogs, toasts and lifted cards.">
         <div className="grid gap-4 lg:grid-cols-3">
           <Specimen label="Spacing scale">
-            <ul className="flex flex-col gap-2.5">
+            <ul className="flex flex-col gap-3">
               {SPACING.map(([step, px]) => (
                 <li key={step} className="flex items-center gap-3 text-caption text-muted">
                   <span className="w-12 tabular-nums">{px}</span>
@@ -125,7 +125,7 @@ export default function DesignSystemPage() {
           <Specimen label="Radius">
             <div className="grid grid-cols-2 gap-3">
               {[['Small · 4px', 'rounded-sm'], ['Medium · 8px', 'rounded-md'], ['Large · 12px', 'rounded-lg'], ['Extra large · 20px', 'rounded-xl']].map(([l, c]) => (
-                <div key={l}><div className={cn('h-16 bg-primary-soft ring-1 ring-primary/30', c)} /><p className="mt-1.5 text-caption text-muted">{l}</p></div>
+                <div key={l}><div className={cn('h-16 bg-primary-soft ring-1 ring-primary/30', c)} /><p className="mt-2 text-caption text-muted">{l}</p></div>
               ))}
             </div>
           </Specimen>

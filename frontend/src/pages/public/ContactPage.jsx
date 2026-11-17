@@ -76,10 +76,10 @@ function InquiryForm({ onSuccess }) {
     <form noValidate onSubmit={handleSubmit(onSubmit)} aria-describedby="form-note" className="flex flex-col gap-6">
       {submitError && (
         <div role="alert" className="flex gap-3 rounded-lg bg-danger-soft p-4 text-small text-ink">
-          <AlertCircle aria-hidden="true" className="mt-0.5 size-5 shrink-0 text-danger" />
+          <AlertCircle aria-hidden="true" className="icon-align-5 size-5 shrink-0 text-danger" />
           <div>
             <p className="font-semibold">Your inquiry was not sent.</p>
-            <p className="mt-0.5">{submitError}</p>
+            <p className="mt-1">{submitError}</p>
           </div>
         </div>
       )}
@@ -136,10 +136,10 @@ export default function ContactPage() {
           <div className="rounded-xl bg-surface-2 p-6">
             <h2 id="alt-contact" className="font-display text-h3 font-bold text-ink">Prefer to talk?</h2>
             <ul className="mt-5 flex flex-col gap-4 text-body">
-              <li className="flex gap-3"><Mail aria-hidden="true" className="mt-1 size-4 shrink-0 text-muted" /><a href={`mailto:${contact.email}`} className="font-medium text-primary underline underline-offset-4">{contact.email}</a></li>
-              <li className="flex gap-3"><Phone aria-hidden="true" className="mt-1 size-4 shrink-0 text-muted" /><a href={contact.phoneHref} className="font-medium text-primary underline underline-offset-4">{contact.phone}</a></li>
-              <li className="flex gap-3"><MapPin aria-hidden="true" className="mt-1 size-4 shrink-0 text-muted" /><address className="not-italic text-ink">{contact.address.join(', ')}</address></li>
-              <li className="flex gap-3"><Clock aria-hidden="true" className="mt-1 size-4 shrink-0 text-muted" /><span className="text-ink">{contact.hours}</span></li>
+              <li className="flex gap-3"><Mail aria-hidden="true" className="icon-align-4 size-4 shrink-0 text-muted" /><a href={`mailto:${contact.email}`} className="font-medium text-primary underline underline-offset-4">{contact.email}</a></li>
+              <li className="flex gap-3"><Phone aria-hidden="true" className="icon-align-4 size-4 shrink-0 text-muted" /><a href={contact.phoneHref} className="font-medium text-primary underline underline-offset-4">{contact.phone}</a></li>
+              <li className="flex gap-3"><MapPin aria-hidden="true" className="icon-align-4 size-4 shrink-0 text-muted" /><address className="not-italic text-ink">{contact.address.join(', ')}</address></li>
+              <li className="flex gap-3"><Clock aria-hidden="true" className="icon-align-4 size-4 shrink-0 text-muted" /><span className="text-ink">{contact.hours}</span></li>
             </ul>
             <p className="mt-5 text-small text-muted">{contact.notice}</p>
           </div>

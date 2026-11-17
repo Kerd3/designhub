@@ -75,7 +75,7 @@ export default function ProjectDetailPage() {
       <div className="mb-6 flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
         <div className="min-w-0">
           <p className="text-small text-muted">{p.id} · {p.category}</p>
-          <h1 className="mt-1 font-display text-h2 font-bold text-ink">{p.name}</h1>
+          <h1 className="mt-1 font-display text-h3 font-bold text-ink">{p.name}</h1>
           <div className="mt-3 flex flex-wrap items-center gap-2">
             <StatusBadge status={p.status} />
             <PriorityBadge priority={p.priority} />
@@ -94,9 +94,9 @@ export default function ProjectDetailPage() {
             <CardHeader title="Overview" />
             <p className="text-body text-ink">{p.description || 'No description yet.'}</p>
             <dl className="mt-6 grid gap-x-6 gap-y-4 sm:grid-cols-3">
-              <div><dt className="text-small text-muted">Start date</dt><dd className="mt-0.5 font-medium text-ink">{formatDate(p.startDate)}</dd></div>
-              <div><dt className="text-small text-muted">Due date</dt><dd className="mt-0.5 font-medium text-ink">{formatDate(p.dueDate)}</dd></div>
-              <div><dt className="text-small text-muted">Schedule</dt><dd className="mt-0.5 font-medium text-ink">{p.status === 'completed' ? 'Delivered' : relativeDue(p.dueDate)}</dd></div>
+              <div><dt className="text-small text-muted">Start date</dt><dd className="mt-1 font-medium text-ink">{formatDate(p.startDate)}</dd></div>
+              <div><dt className="text-small text-muted">Due date</dt><dd className="mt-1 font-medium text-ink">{formatDate(p.dueDate)}</dd></div>
+              <div><dt className="text-small text-muted">Schedule</dt><dd className="mt-1 font-medium text-ink">{p.status === 'completed' ? 'Delivered' : relativeDue(p.dueDate)}</dd></div>
             </dl>
           </Card>
 

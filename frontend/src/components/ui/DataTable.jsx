@@ -61,7 +61,7 @@ export function DataTable({
                     className={cn('whitespace-nowrap px-4 py-3 font-medium text-muted', column.align === 'right' && 'text-right', column.hideBelow && HIDE[column.hideBelow])}
                   >
                     {column.sortable ? (
-                      <button type="button" onClick={() => toggleSort(column.key)} className={cn('-mx-1 inline-flex items-center gap-1.5 rounded-sm px-1 hover:text-ink', active && 'text-ink')}>
+                      <button type="button" onClick={() => toggleSort(column.key)} className={cn('-mx-1 inline-flex items-center gap-2 rounded-sm px-1 hover:text-ink', active && 'text-ink')}>
                         {column.header}
                         <Icon aria-hidden="true" className={cn('size-3.5', !active && 'opacity-50')} />
                       </button>

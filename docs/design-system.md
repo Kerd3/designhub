@@ -86,7 +86,19 @@ Headings use `text-wrap: balance`; paragraphs use `pretty`. Nothing that people 
 | `SearchInput`, `FilterPanel` | — | Escape clears search. On phones the filters collapse behind "Filters (n)" |
 | `Toast` (`useToast`) | `success` `error` `info` | Polite live region. Errors are `role="alert"`. Pause on hover/focus, dismissible |
 | `EmptyState`, `LoadingState`, `ErrorState`, `Skeleton`, `SkeletonLoader` | `cards` `table` `stats` | Loading uses `role="status"`; error uses `role="alert"` with retry |
-| `Avatar`, `AvatarGroup`, `ProgressBar` | `xs`–`xl` | Initials only (the team is fictional). Decorative initials are drawn with CSS |
+| `Avatar`, `AvatarGroup`, `ProgressBar` | `xs`–`xl` | Initials on neutral tones only (the team is fictional). Decorative initials are drawn with CSS |
+
+## Polish rules (the seven-principles pass)
+
+| Principle | Rule in this codebase |
+| --- | --- |
+| Focal point | One `primary` (blue) action per screen. The header "Start a project" is `secondary` (charcoal) so the page's own CTA is the focal point. Stat cards are whole-card links with no accent-coloured "View" text. The top bar shows a quiet location line, not a second title. The notification count includes only actionable items (new inquiries, due tasks). |
+| Spacing | Only 4px-multiple spacing utilities. Half steps (`*-0.5`, `*-1.5`, `*-2.5`, `*-3.5`) are not used for padding, margin, gap or inset, except in code-drawn interface previews. |
+| Typography | Eight type tokens, no one-off sizes. Workspace card titles are 16px semibold; page titles are `text-h3`. Hierarchy comes from weight and ink/muted colour first, size second. Labels use sentence case. |
+| Colour | Neutrals (bg, surface, sand) for every field and decoration. Blue is reserved for actions, links, focus, selection and the active nav item. Success/warning/danger/info appear only as status. Single-series charts use `--color-chart-bar` (neutral). |
+| Real content | No placeholder people or companies; every name and number is specific (and labelled fictional). |
+| Details | Radius steps tighten inward (`xl` container → `lg` card → `md` control → `sm` tag). Borders are 1px rings; shadows are layered and tinted with the charcoal ink. Icons beside text use `icon-align-4/5/2`, which centres them on the first line box (`(1lh − icon) / 2`) instead of margin nudges. |
+| Motion | Menus, popovers and tooltips grow from their trigger (`origin-*` + `animate-pop-in`, 160ms). Dialogs rise 220ms, panels slide from their edge, and section reveals are 500ms with 16px travel. All collapse under reduced motion. |
 
 ## Rules of use
 

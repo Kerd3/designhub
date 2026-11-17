@@ -62,7 +62,7 @@ export default function LoginPage() {
       <main id="main" className="flex flex-col px-4 py-6 sm:px-10 lg:px-16">
         <div className="flex items-center justify-between">
           <Wordmark />
-          <Link to="/" className="inline-flex items-center gap-1.5 rounded-sm text-small font-medium text-muted hover:text-ink">
+          <Link to="/" className="inline-flex items-center gap-2 rounded-sm text-small font-medium text-muted hover:text-ink">
             <ArrowLeft aria-hidden="true" className="size-4" /> Back to website
           </Link>
         </div>
@@ -73,7 +73,7 @@ export default function LoginPage() {
 
           <div className="mt-8 rounded-lg bg-info-soft p-4">
             <div className="flex gap-3">
-              <Info aria-hidden="true" className="mt-0.5 size-5 shrink-0 text-info" />
+              <Info aria-hidden="true" className="icon-align-5 size-5 shrink-0 text-info" />
               <div className="text-small text-ink">
                 <p className="font-semibold">Demo access, not real authentication</p>
                 <p className="mt-1">This portfolio demo checks the account below in your browser. It protects nothing and stores no password.</p>
@@ -88,8 +88,8 @@ export default function LoginPage() {
 
           <form noValidate onSubmit={handleSubmit(onSubmit)} className="mt-8 flex flex-col gap-5">
             {authError && (
-              <p role="alert" className="flex gap-2.5 rounded-md bg-danger-soft px-4 py-3 text-small text-ink">
-                <AlertCircle aria-hidden="true" className="mt-0.5 size-4 shrink-0 text-danger" /> {authError}
+              <p role="alert" className="flex gap-3 rounded-md bg-danger-soft px-4 py-3 text-small text-ink">
+                <AlertCircle aria-hidden="true" className="icon-align-4 size-4 shrink-0 text-danger" /> {authError}
               </p>
             )}
             <Input label="Email address" type="email" autoComplete="username" inputMode="email" required error={errors.email?.message} {...register('email')} />

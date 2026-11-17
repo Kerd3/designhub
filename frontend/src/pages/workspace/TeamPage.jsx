@@ -76,7 +76,7 @@ export default function TeamPage() {
                       <button type="button" onClick={() => setParam('open', m.id)} className="text-left after:absolute after:inset-0 after:rounded-lg after:content-[''] hover:underline">{m.name}</button>
                     </h2>
                     <p className="text-small text-muted">{m.role}</p>
-                    <div className="mt-2 flex flex-wrap gap-1.5"><StatusBadge status={m.availability} /><span className="rounded-full bg-surface-2 px-2.5 py-0.5 text-caption font-medium text-ink">{m.department}</span></div>
+                    <div className="mt-2 flex flex-wrap gap-2"><StatusBadge status={m.availability} /><span className="rounded-full bg-surface-2 px-3 py-1 text-caption font-medium text-ink">{m.department}</span></div>
                   </div>
                 </div>
                 <div className="mt-5">
@@ -96,9 +96,9 @@ export default function TeamPage() {
           <div className="flex flex-col gap-6">
             <div className="flex items-center gap-4"><Avatar name={selected.name} size="xl" decorative /><p className="text-body text-ink">{selected.bio}</p></div>
             <dl className="grid gap-4 sm:grid-cols-2">
-              <div className="sm:col-span-2"><dt className="text-small text-muted">Work email</dt><dd className="mt-0.5"><a href={`mailto:${selected.email}`} className="inline-flex items-center gap-1.5 font-medium text-primary hover:underline break-all"><Mail aria-hidden="true" className="size-4 shrink-0" />{selected.email}</a></dd></div>
-              <div><dt className="text-small text-muted">Location</dt><dd className="mt-0.5 font-medium text-ink">{selected.location}</dd></div>
-              <div><dt className="text-small text-muted">Weekly capacity</dt><dd className="mt-0.5 font-medium text-ink">{selected.capacityHours} hours</dd></div>
+              <div className="sm:col-span-2"><dt className="text-small text-muted">Work email</dt><dd className="mt-1"><a href={`mailto:${selected.email}`} className="inline-flex items-center gap-2 font-medium text-primary hover:underline break-all"><Mail aria-hidden="true" className="size-4 shrink-0" />{selected.email}</a></dd></div>
+              <div><dt className="text-small text-muted">Location</dt><dd className="mt-1 font-medium text-ink">{selected.location}</dd></div>
+              <div><dt className="text-small text-muted">Weekly capacity</dt><dd className="mt-1 font-medium text-ink">{selected.capacityHours} hours</dd></div>
             </dl>
             <Select
               label="Availability"
@@ -113,7 +113,7 @@ export default function TeamPage() {
                 }
               }}
             />
-            <div><h3 className="font-sans text-small font-semibold text-ink">Skills</h3><ul className="mt-2 flex flex-wrap gap-1.5">{selected.skills.map((sk) => <li key={sk} className="rounded-sm bg-surface-2 px-2 py-0.5 text-caption font-medium text-ink">{sk}</li>)}</ul></div>
+            <div><h3 className="font-sans text-small font-semibold text-ink">Skills</h3><ul className="mt-2 flex flex-wrap gap-2">{selected.skills.map((sk) => <li key={sk} className="rounded-sm bg-surface-2 px-2 py-1 text-caption font-medium text-ink">{sk}</li>)}</ul></div>
             <div>
               <h3 className="font-sans text-small font-semibold text-ink">Active projects ({stats[selected.id].projects.length})</h3>
               <ul className="mt-2 flex flex-col gap-2">{stats[selected.id].projects.map((p) => <li key={p.id} className="flex items-center justify-between gap-3"><Link to={`/workspace/projects/${p.id}`} className="truncate text-small font-medium text-ink hover:underline">{p.name}</Link><StatusBadge status={p.status} /></li>)}</ul>

@@ -9,7 +9,7 @@ import { Badge } from './Badge.jsx';
 const STATUS_STYLE = {
   // projects
   planning: { tone: 'neutral', icon: CircleDashed },
-  'in-progress': { tone: 'primary', icon: CircleDot },
+  'in-progress': { tone: 'info', icon: CircleDot },
   review: { tone: 'warning', icon: Eye },
   completed: { tone: 'success', icon: CheckCircle2 },
   'on-hold': { tone: 'outline', icon: PauseCircle },
@@ -19,7 +19,7 @@ const STATUS_STYLE = {
   // inquiries
   new: { tone: 'info', icon: Sparkles },
   reviewing: { tone: 'warning', icon: Search },
-  contacted: { tone: 'primary', icon: Mail },
+  contacted: { tone: 'neutral', icon: Mail },
   converted: { tone: 'success', icon: CheckCircle2 },
   archived: { tone: 'outline', icon: Archive },
   // clients

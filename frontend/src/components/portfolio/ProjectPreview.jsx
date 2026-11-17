@@ -64,7 +64,7 @@ function DashboardDesktop({ project }) {
           </div>
           <div className="pv-card pv-col pv-divide">
             <span className="pv-strong pb-[0.4em]">Upcoming</span>
-            {[['Invoice 1042', 'Acme Studio', '+$3,200'], ['Payroll', 'Nov 28', '−$8,400'], ['Invoice 1043', 'Larkspur', '+$1,150'], ['Rent', 'Dec 1', '−$2,100']].map(([a, b, c]) => (
+            {[['Invoice 1042', 'Hollis Print Co.', '+$3,200'], ['Payroll', 'Nov 28', '−$8,400'], ['Invoice 1043', 'Larkspur', '+$1,150'], ['Rent', 'Dec 1', '−$2,100']].map(([a, b, c]) => (
               <div key={a} className="pv-row justify-between py-[0.4em]"><div className="min-w-0"><div className="pv-strong text-[0.85em]">{a}</div><div className="pv-label">{b}</div></div><span className={cn('pv-small font-semibold', c.startsWith('+') && 'pv-up')}>{c}</span></div>
             ))}
           </div>

@@ -30,7 +30,7 @@ function Specimen({ tokens }) {
     >
       <div aria-hidden="true" className="flex flex-col transition-[gap] duration-300" style={{ gap }}>
         <div className="flex items-center justify-between gap-3">
-          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 text-caption font-semibold transition-[border-radius] duration-300" style={{ background: theme.surface, borderRadius: 999 }}>
+          <span className="inline-flex items-center gap-2 px-3 py-1 text-caption font-semibold transition-[border-radius] duration-300" style={{ background: theme.surface, borderRadius: 999 }}>
             <Check className="size-3.5" style={{ color: accent }} /> Confirmed
           </span>
           <span className="text-caption" style={{ color: theme.muted }}>Ref. WN-2048</span>
@@ -50,8 +50,8 @@ function Specimen({ tokens }) {
           <span style={{ color: theme.muted }}>Reminder</span> · Text me the day before
         </div>
         <div className="flex gap-2">
-          <span className="flex-1 py-2.5 text-center text-small font-semibold transition-[border-radius,background-color] duration-300" style={{ background: accent, color: onAccent, borderRadius: rSmall }}>Add to calendar</span>
-          <span className="px-4 py-2.5 text-center text-small font-semibold transition-[border-radius] duration-300" style={{ boxShadow: `inset 0 0 0 1.5px ${accent}`, color: accent, borderRadius: rSmall }}>Reschedule</span>
+          <span className="flex-1 py-3 text-center text-small font-semibold transition-[border-radius,background-color] duration-300" style={{ background: accent, color: onAccent, borderRadius: rSmall }}>Add to calendar</span>
+          <span className="px-4 py-3 text-center text-small font-semibold transition-[border-radius] duration-300" style={{ boxShadow: `inset 0 0 0 1.5px ${accent}`, color: accent, borderRadius: rSmall }}>Reschedule</span>
         </div>
       </div>
     </div>
@@ -117,7 +117,7 @@ export function TokenPlayground() {
           <p className="text-body text-muted">One accent, used for the action and little else.</p>
           <div className="mt-2 flex flex-wrap gap-2">
             {ACCENTS.map((a) => (
-              <label key={a.value} className={cn('inline-flex h-11 cursor-pointer items-center gap-2 rounded-full pl-1.5 pr-4 text-small font-medium ring-1 ring-inset transition-colors has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-primary', accentKey === a.value ? 'bg-surface ring-ink' : 'ring-border-strong hover:bg-surface')}>
+              <label key={a.value} className={cn('inline-flex h-11 cursor-pointer items-center gap-2 rounded-full pl-2 pr-4 text-small font-medium ring-1 ring-inset transition-colors has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-primary', accentKey === a.value ? 'bg-surface ring-ink' : 'ring-border-strong hover:bg-surface')}>
                 <input type="radio" name="accent" value={a.value} checked={accentKey === a.value} onChange={() => setAccentKey(a.value)} className="visually-hidden" />
                 <span aria-hidden="true" className="grid size-8 place-items-center rounded-full" style={{ background: a.light }}>
                   {accentKey === a.value && <Check className="size-4 text-white" />}
@@ -138,7 +138,7 @@ export function TokenPlayground() {
 
         <div>
           <p className="text-small font-medium text-muted">The tokens behind this card</p>
-          <pre tabIndex={0} aria-label="Generated CSS tokens" className="mt-2 overflow-x-auto rounded-lg bg-inverse p-4 text-[0.8125rem] leading-relaxed text-inverse-ink"><code>{css}</code></pre>
+          <pre tabIndex={0} aria-label="Generated CSS tokens" className="mt-2 overflow-x-auto rounded-lg bg-inverse p-4 text-caption leading-relaxed text-inverse-ink"><code>{css}</code></pre>
         </div>
       </div>
     </div>

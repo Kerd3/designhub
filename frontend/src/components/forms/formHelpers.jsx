@@ -15,8 +15,8 @@ export function applyServerErrors(error, setError) {
 export function FormError({ message }) {
   if (!message) return null;
   return (
-    <p role="alert" className="flex gap-2.5 rounded-md bg-danger-soft px-4 py-3 text-small text-ink">
-      <AlertCircle aria-hidden="true" className="mt-0.5 size-4 shrink-0 text-danger" /> {message}
+    <p role="alert" className="flex gap-3 rounded-md bg-danger-soft px-4 py-3 text-small text-ink">
+      <AlertCircle aria-hidden="true" className="icon-align-4 size-4 shrink-0 text-danger" /> {message}
     </p>
   );
 }

@@ -17,8 +17,8 @@ export function PublicFooter() {
 
         <div className="mt-16 grid gap-12 lg:mt-20 lg:grid-cols-[minmax(0,42fr)_minmax(0,58fr)]">
           <div className="flex flex-col gap-3">
-            <a href={`mailto:${contact.email}`} className="w-fit font-display text-[clamp(1.5rem,1.1rem+1.4vw,2.125rem)] font-bold tracking-tight text-inverse-accent hover:underline underline-offset-4">{contact.email}</a>
-            <a href={contact.phoneHref} className="w-fit font-display text-[clamp(1.5rem,1.1rem+1.4vw,2.125rem)] font-bold tracking-tight text-inverse-accent hover:underline underline-offset-4">{contact.phone}</a>
+            <a href={`mailto:${contact.email}`} className="w-fit font-display text-h2 font-bold tracking-tight text-inverse-accent hover:underline underline-offset-4">{contact.email}</a>
+            <a href={contact.phoneHref} className="w-fit font-display text-h2 font-bold tracking-tight text-inverse-accent hover:underline underline-offset-4">{contact.phone}</a>
             <address className="mt-2 not-italic text-body text-inverse-muted">{contact.address.join(', ')}</address>
             <p className="max-w-sm text-small text-inverse-muted">{contact.notice}</p>
           </div>
@@ -26,20 +26,20 @@ export function PublicFooter() {
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">
             <nav aria-label="Studio">
               <h3 className="font-sans text-small font-semibold text-inverse-muted">Studio</h3>
-              <ul className="mt-4 flex flex-col gap-2.5">
+              <ul className="mt-4 flex flex-col gap-3">
                 {PUBLIC_NAV.map((item) => <li key={item.to}><Link to={item.to} className={linkClass}>{item.label}</Link></li>)}
                 <li><Link to="/design-system" className={linkClass}>Design system</Link></li>
               </ul>
             </nav>
             <nav aria-label="Services">
               <h3 className="font-sans text-small font-semibold text-inverse-muted">Services</h3>
-              <ul className="mt-4 flex flex-col gap-2.5">
+              <ul className="mt-4 flex flex-col gap-3">
                 {services.map((s) => <li key={s.slug}><Link to={`/services#${s.slug}`} className={linkClass}>{s.name}</Link></li>)}
               </ul>
             </nav>
             <div>
               <h3 className="font-sans text-small font-semibold text-inverse-muted">Elsewhere</h3>
-              <ul className="mt-4 flex flex-col gap-2.5">
+              <ul className="mt-4 flex flex-col gap-3">
                 {social.map((s) => (
                   <li key={s.label}>
                     <a href={s.href} target="_blank" rel="noreferrer noopener" className={linkClass}>
@@ -54,7 +54,7 @@ export function PublicFooter() {
         </div>
 
         <div className="mt-16 flex flex-col gap-4 pt-6 text-caption text-inverse-muted sm:flex-row sm:items-start sm:justify-between lg:mt-24">
-          <div className="flex max-w-3xl flex-col gap-1.5">
+          <div className="flex max-w-3xl flex-col gap-2">
             <p>© {year} DesignHub Studio. A fictional studio built as a frontend portfolio project. All projects, people and contact details are demonstration content.</p>
             <p>
               Photographs by{' '}
@@ -67,7 +67,7 @@ export function PublicFooter() {
               on Unsplash.
             </p>
           </div>
-          <a href="#top" className="inline-flex shrink-0 items-center gap-1.5 text-small text-inverse-ink hover:underline underline-offset-4">
+          <a href="#top" className="inline-flex shrink-0 items-center gap-2 text-small text-inverse-ink hover:underline underline-offset-4">
             <ArrowUp aria-hidden="true" className="size-4" /> Back to top
           </a>
         </div>

@@ -59,7 +59,8 @@ export function useNotifications(preferences, refreshKey) {
     }
     return list
       .sort((a, b) => String(b.at).localeCompare(String(a.at)))
-      .map((item) => ({ ...item, unread: !read.has(item.id) }));
+      // Only actionable items (inquiries, due tasks) count as unread; activity is context.
+      .map((item) => ({ ...item, unread: item.kind !== 'activity' && !read.has(item.id) }));
   }, [raw, preferences, read]);
 
   const markAllRead = useCallback(() => {

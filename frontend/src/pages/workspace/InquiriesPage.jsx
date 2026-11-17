@@ -16,11 +16,11 @@ function InquiryDetail({ inquiry, onStatus, onArchive, busy }) {
     <div className="flex flex-col gap-6">
       <div className="flex flex-wrap items-center gap-2"><StatusBadge status={inquiry.status} /><span className="text-small text-muted">Received {formatDateTime(inquiry.submittedAt)}</span></div>
       <dl className="grid gap-4 sm:grid-cols-2">
-        <div><dt className="text-small text-muted">Contact</dt><dd className="mt-0.5 font-medium text-ink">{inquiry.name}</dd></div>
-        <div><dt className="text-small text-muted">Company</dt><dd className="mt-0.5 font-medium text-ink">{inquiry.company || '—'}</dd></div>
-        <div><dt className="text-small text-muted">Project type</dt><dd className="mt-0.5 font-medium text-ink">{inquiry.projectType}</dd></div>
-        <div><dt className="text-small text-muted">Budget</dt><dd className="mt-0.5 font-medium text-ink">{inquiry.budget}</dd></div>
-        <div className="sm:col-span-2"><dt className="text-small text-muted">Email</dt><dd className="mt-0.5"><a href={`mailto:${inquiry.email}?subject=${encodeURIComponent(`Your ${inquiry.projectType} inquiry`)}`} className="inline-flex items-center gap-1.5 font-medium text-primary hover:underline break-all"><Mail aria-hidden="true" className="size-4 shrink-0" />{inquiry.email}</a></dd></div>
+        <div><dt className="text-small text-muted">Contact</dt><dd className="mt-1 font-medium text-ink">{inquiry.name}</dd></div>
+        <div><dt className="text-small text-muted">Company</dt><dd className="mt-1 font-medium text-ink">{inquiry.company || '—'}</dd></div>
+        <div><dt className="text-small text-muted">Project type</dt><dd className="mt-1 font-medium text-ink">{inquiry.projectType}</dd></div>
+        <div><dt className="text-small text-muted">Budget</dt><dd className="mt-1 font-medium text-ink">{inquiry.budget}</dd></div>
+        <div className="sm:col-span-2"><dt className="text-small text-muted">Email</dt><dd className="mt-1"><a href={`mailto:${inquiry.email}?subject=${encodeURIComponent(`Your ${inquiry.projectType} inquiry`)}`} className="inline-flex items-center gap-2 font-medium text-primary hover:underline break-all"><Mail aria-hidden="true" className="size-4 shrink-0" />{inquiry.email}</a></dd></div>
       </dl>
       <div>
         <h3 className="font-sans text-small font-semibold text-ink">Project description</h3>

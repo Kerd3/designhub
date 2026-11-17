@@ -10,7 +10,7 @@ export function RadioButton({ label, description, id: idProp, className, ...rest
         id={id}
         type="radio"
         aria-describedby={description ? `${id}-desc` : undefined}
-        className="mt-0.5 size-5 shrink-0 cursor-pointer appearance-none rounded-full bg-surface ring-1 ring-inset ring-border-strong transition-shadow checked:ring-[6px] checked:ring-primary disabled:cursor-not-allowed disabled:opacity-50"
+        className="icon-align-5 size-5 shrink-0 cursor-pointer appearance-none rounded-full bg-surface ring-1 ring-inset ring-border-strong transition-shadow checked:ring-[6px] checked:ring-primary disabled:cursor-not-allowed disabled:opacity-50"
         {...rest}
       />
       <span className="min-w-0">

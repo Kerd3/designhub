@@ -18,7 +18,7 @@ export function Select({ label, hint, error, required, optional, hideLabel, opti
             ref={ref}
             {...aria}
             {...rest}
-            className={cn(controlBase, 'appearance-none pr-10', size === 'sm' ? 'h-9 pl-3 text-small' : 'h-11 pl-3.5')}
+            className={cn(controlBase, 'appearance-none pr-10', size === 'sm' ? 'h-9 pl-3 text-small' : 'h-11 pl-4')}
           >
             {placeholder !== undefined && <option value="">{placeholder}</option>}
             {options.map((option) => {

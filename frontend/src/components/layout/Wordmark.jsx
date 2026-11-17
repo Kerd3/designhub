@@ -17,10 +17,10 @@ export function LogoMark({ className }) {
  */
 export function Wordmark({ to = '/', destination = 'home', subtitle, className, onClick }) {
   return (
-    <Link to={to} onClick={onClick} className={cn('inline-flex items-center gap-2.5 rounded-md text-ink', className)}>
+    <Link to={to} onClick={onClick} className={cn('inline-flex items-center gap-3 rounded-md text-ink', className)}>
       <LogoMark />
       <span className="flex flex-col leading-none">
-        <span className="font-display text-[1.0625rem] font-extrabold tracking-tight">DesignHub</span>
+        <span className="font-display text-body font-extrabold tracking-tight">DesignHub</span>
         {subtitle && <span className="mt-1 text-caption font-medium text-muted">{subtitle}</span>}
       </span>
       <span className="visually-hidden">, {destination}</span>

@@ -65,7 +65,7 @@ export default function AboutPage() {
           </div>
           <div className="flex max-w-[62ch] flex-col justify-center">
             <h2 id="philosophy-title" data-reveal className="font-display text-h1 font-bold text-ink">How we build</h2>
-            <blockquote data-reveal className="mt-8 font-display text-[clamp(1.375rem,1.1rem+1vw,2rem)] font-semibold leading-snug tracking-tight text-ink">
+            <blockquote data-reveal className="mt-8 font-display text-h2 font-semibold text-ink">
               <p>Design decisions belong in code, and code should explain its design decisions.</p>
             </blockquote>
             <div data-reveal className="mt-8 flex flex-col gap-5 text-body text-ink">
@@ -94,8 +94,8 @@ export default function AboutPage() {
                   </div>
                 </div>
                 <p className="mt-5 text-body text-ink">{member.bio}</p>
-                <ul aria-label={`${member.name}'s focus areas`} className="mt-5 flex flex-wrap gap-1.5">
-                  {member.skills.map((s) => <li key={s} className="rounded-sm bg-surface-2 px-2 py-0.5 text-caption font-medium text-muted">{s}</li>)}
+                <ul aria-label={`${member.name}'s focus areas`} className="mt-5 flex flex-wrap gap-2">
+                  {member.skills.map((s) => <li key={s} className="rounded-sm bg-surface-2 px-2 py-1 text-caption font-medium text-muted">{s}</li>)}
                 </ul>
               </li>
             ))}

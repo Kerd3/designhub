@@ -1,14 +1,12 @@
 import { cn, initials } from '@/utils/format.js';
 
+// Neutral tones only: status colours are reserved for status.
 const TONES = [
-  'bg-primary-soft text-primary',
-  'bg-success-soft text-success',
-  'bg-warning-soft text-warning',
-  'bg-info-soft text-info',
-  'bg-accent-soft text-ink dark:bg-surface-3',
   'bg-surface-3 text-ink',
+  'bg-accent-soft text-ink dark:bg-surface-3',
+  'bg-secondary/12 text-ink',
 ];
-const SIZES = { xs: 'size-6 text-[11px]', sm: 'size-8 text-caption', md: 'size-10 text-small', lg: 'size-14 text-body', xl: 'size-20 text-h3' };
+const SIZES = { xs: 'size-6 text-caption', sm: 'size-8 text-caption', md: 'size-10 text-small', lg: 'size-14 text-body', xl: 'size-20 text-h3' };
 
 function toneFor(name = '') {
   let hash = 0;

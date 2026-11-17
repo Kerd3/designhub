@@ -7,7 +7,7 @@ export function Checkbox({ label, description, id: idProp, className, ref, ...re
   const id = idProp ?? autoId;
   return (
     <div className={cn('flex items-start gap-3', className)}>
-      <span className="relative mt-0.5 grid size-5 shrink-0 place-items-center">
+      <span className="relative icon-align-5 grid size-5 shrink-0 place-items-center">
         <input
           ref={ref}
           id={id}

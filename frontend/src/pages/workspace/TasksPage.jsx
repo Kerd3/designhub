@@ -182,7 +182,7 @@ export default function TasksPage() {
         <Select label="Status" size="sm" placeholder="All statuses" value={status} onChange={(e) => setParam('status', e.target.value)} options={STATUS_OPTIONS} className="md:w-36" />
         <Select label="Priority" size="sm" placeholder="All priorities" value={priority} onChange={(e) => setParam('priority', e.target.value)} options={PRIORITIES.map((p) => ({ value: p, label: labelFor(p) }))} className="md:w-36" />
         <Select label="Assignee" size="sm" placeholder="Everyone" value={assignee} onChange={(e) => setParam('assignee', e.target.value)} options={lookups.team.map((m) => ({ value: m.id, label: m.name }))} className="md:w-44" />
-        <div className="flex flex-col gap-1.5 md:ml-auto">
+        <div className="flex flex-col gap-2 md:ml-auto">
           <span className="text-small font-medium text-ink">View</span>
           <SegmentedControl label="View" size="sm" value={view} onChange={(v) => update('appearance', { taskView: v })} options={[{ value: 'board', label: 'Board', icon: Columns3 }, { value: 'table', label: 'Table', icon: Table2 }]} />
         </div>

@@ -18,7 +18,7 @@ export function ActivityFeed({ items, limit = 6 }) {
             </span>
             <div className="min-w-0 pt-1">
               <p className="text-small text-ink">{item.message}</p>
-              <p className="mt-0.5 text-caption text-muted">
+              <p className="mt-1 text-caption text-muted">
                 {item.actor} · <time dateTime={item.at} title={formatDateTime(item.at)}>{timeAgo(item.at)}</time>
               </p>
             </div>

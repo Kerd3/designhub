@@ -98,6 +98,8 @@ test.describe('Public website', () => {
   });
 
   test('a valid inquiry is stored by the mock API and shown as success', async ({ page }) => {
+    // Slow this request down so the in-flight state can be observed reliably.
+    await page.addInitScript(() => localStorage.setItem('designhub.mock.latency', '800'));
     await page.goto('/contact');
     const data = await fillContactForm(page);
     const submit = page.getByRole('button', { name: 'Send inquiry' });

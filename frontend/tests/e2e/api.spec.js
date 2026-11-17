@@ -50,8 +50,8 @@ test('network failures are reported clearly', async ({ page }) => {
 test('workspace dashboard and CRUD use the API', async ({ page, request }) => {
   await signInViaStorage(page);
   await page.goto('/workspace');
-  await expect(page.getByTestId('stat-New Inquiries')).toHaveText('4');
-  await expect(page.getByTestId('stat-Total Projects')).toHaveText('10');
+  await expect(page.getByTestId('stat-new-inquiries')).toHaveText('4');
+  await expect(page.getByTestId('stat-total-projects')).toHaveText('10');
 
   await page.goto('/workspace/projects/pr-104');
   await page.getByLabel('Project status').selectOption('in-progress');

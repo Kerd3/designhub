@@ -74,12 +74,12 @@ export default function OverviewPage() {
         <div className="flex flex-col gap-6">
           <section aria-label="Summary">
             <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 2xl:grid-cols-6">
-              <StatCard label="Total Projects" value={data.summary.totals.totalProjects} helper="All statuses" icon={FolderKanban} to="/workspace/projects" />
-              <StatCard label="Active Projects" value={data.summary.totals.activeProjects} helper="In progress or in review" icon={Activity} to="/workspace/projects?status=active" />
-              <StatCard label="Completed Projects" value={data.summary.totals.completedProjects} helper="Delivered" icon={CheckCircle2} to="/workspace/projects?status=completed" />
-              <StatCard label="Total Clients" value={data.summary.totals.totalClients} helper={`${data.clients.filter((c) => c.status === 'active').length} active`} icon={Building2} to="/workspace/clients" />
-              <StatCard label="Pending Tasks" value={data.summary.totals.pendingTasks} helper={data.summary.overdueTasks ? `${data.summary.overdueTasks} overdue` : 'None overdue'} icon={ListChecks} to="/workspace/tasks" />
-              <StatCard label="New Inquiries" value={data.summary.totals.newInquiries} helper="Waiting for a reply" icon={Inbox} to="/workspace/inquiries?status=new" />
+              <StatCard id="total-projects" label="Total projects" value={data.summary.totals.totalProjects} helper="All statuses" icon={FolderKanban} to="/workspace/projects" />
+              <StatCard id="active-projects" label="Active projects" value={data.summary.totals.activeProjects} helper="In progress or in review" icon={Activity} to="/workspace/projects?status=active" />
+              <StatCard id="completed-projects" label="Completed projects" value={data.summary.totals.completedProjects} helper="Delivered" icon={CheckCircle2} to="/workspace/projects?status=completed" />
+              <StatCard id="total-clients" label="Total clients" value={data.summary.totals.totalClients} helper={`${data.clients.filter((c) => c.status === 'active').length} active`} icon={Building2} to="/workspace/clients" />
+              <StatCard id="pending-tasks" label="Pending tasks" value={data.summary.totals.pendingTasks} helper={data.summary.overdueTasks ? `${data.summary.overdueTasks} overdue` : 'None overdue'} icon={ListChecks} to="/workspace/tasks" />
+              <StatCard id="new-inquiries" label="New inquiries" value={data.summary.totals.newInquiries} helper="Waiting for a reply" icon={Inbox} to="/workspace/inquiries?status=new" />
             </div>
           </section>
 
@@ -117,13 +117,13 @@ export default function OverviewPage() {
               <CardHeader title="Active projects" description="In progress or in review, by due date." action={<Button to="/workspace/projects" variant="ghost" size="sm" rightIcon={ArrowRight}>All projects</Button>} />
               <ul className="flex flex-col">
                 {derived.activeProjects.map((p) => (
-                  <li key={p.id} className="grid gap-2 border-t border-border py-3.5 first:border-t-0 first:pt-0 sm:grid-cols-[1fr_160px] sm:items-center sm:gap-6">
+                  <li key={p.id} className="grid gap-2 border-t border-border py-4 first:border-t-0 first:pt-0 sm:grid-cols-[1fr_160px] sm:items-center sm:gap-6">
                     <div className="min-w-0">
                       <div className="flex flex-wrap items-center gap-2">
                         <Link to={`/workspace/projects/${p.id}`} className="truncate text-small font-semibold text-ink hover:underline">{p.name}</Link>
                         <StatusBadge status={p.status} />
                       </div>
-                      <p className="mt-0.5 text-caption text-muted">{derived.clientById[p.clientId]?.companyName} · Due {formatShortDate(p.dueDate)}</p>
+                      <p className="mt-1 text-caption text-muted">{derived.clientById[p.clientId]?.companyName} · Due {formatShortDate(p.dueDate)}</p>
                     </div>
                     <ProgressBar value={p.progress} label={`${p.name} completion`} />
                   </li>

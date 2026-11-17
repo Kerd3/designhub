@@ -32,7 +32,7 @@ export function SegmentedControl({ label, options, value, onChange, size = 'md',
             onClick={() => onChange(option.value)}
             className={cn(
               'inline-flex items-center justify-center gap-2 rounded-sm font-medium transition-colors',
-              size === 'sm' ? 'h-8 px-2.5 text-caption' : 'h-9 px-3 text-small',
+              size === 'sm' ? 'h-8 px-3 text-caption' : 'h-9 px-3 text-small',
               checked ? 'bg-surface text-ink shadow-sm' : 'text-muted hover:text-ink',
             )}
           >

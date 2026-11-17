@@ -12,7 +12,7 @@ export function Field({ id, label, hint, error, required, optional, counter, hid
   const describedBy = [errorId, hintId, counterId].filter(Boolean).join(' ') || undefined;
 
   return (
-    <div className={cn('flex flex-col gap-1.5', className)}>
+    <div className={cn('flex flex-col gap-2', className)}>
       {label && (
         <label htmlFor={id} className={cn('text-small font-medium text-ink', hideLabel && 'visually-hidden')}>
           {label}
@@ -25,8 +25,8 @@ export function Field({ id, label, hint, error, required, optional, counter, hid
         <div className="flex items-start justify-between gap-3">
           <div className="min-w-0">
             {error ? (
-              <p id={errorId} className="flex items-start gap-1.5 text-small text-danger">
-                <AlertCircle aria-hidden="true" className="mt-0.5 size-4 shrink-0" />
+              <p id={errorId} className="flex items-start gap-2 text-small text-danger">
+                <AlertCircle aria-hidden="true" className="icon-align-4 size-4 shrink-0" />
                 <span>{error}</span>
               </p>
             ) : hint ? (

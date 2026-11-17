@@ -12,10 +12,10 @@ function ResultGroup({ title, icon: Icon, items, onSelect }) {
   return (
     <section aria-label={title} className="mt-5 first:mt-4">
       <h3 className="px-1 font-sans text-caption font-semibold text-muted">{title}</h3>
-      <ul className="mt-1.5 flex flex-col">
+      <ul className="mt-2 flex flex-col">
         {items.map((item) => (
           <li key={item.id}>
-            <Link to={item.to} onClick={onSelect} className="flex items-center gap-3 rounded-md px-2 py-2.5 hover:bg-surface-2 focus-visible:bg-surface-2">
+            <Link to={item.to} onClick={onSelect} className="flex items-center gap-3 rounded-md px-2 py-3 hover:bg-surface-2 focus-visible:bg-surface-2">
               <Icon aria-hidden="true" className="size-4 shrink-0 text-muted" />
               <span className="min-w-0 flex-1">
                 <span className="block truncate text-small font-medium text-ink">{item.label}</span>

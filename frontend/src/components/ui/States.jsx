@@ -8,7 +8,7 @@ export function EmptyState({ icon: Icon = Inbox, title, description, action, cla
       <span className="grid size-12 place-items-center rounded-full bg-surface text-muted">
         <Icon aria-hidden="true" className="size-6" />
       </span>
-      <h3 className="mt-4 font-display text-h3 font-bold text-ink">{title}</h3>
+      <h3 className="mt-4 font-sans text-body font-semibold text-ink">{title}</h3>
       {description && <p className="mt-1 max-w-sm text-small text-muted">{description}</p>}
       {action && <div className="mt-5">{action}</div>}
     </div>
@@ -28,7 +28,7 @@ export function ErrorState({ title = 'Something went wrong', error, onRetry, cla
   return (
     <div role="alert" className={cn('flex flex-col items-center rounded-lg bg-danger-soft px-6 py-10 text-center', className)}>
       <AlertTriangle aria-hidden="true" className="size-7 text-danger" />
-      <h3 className="mt-3 font-display text-h3 font-bold text-ink">{title}</h3>
+      <h3 className="mt-3 font-sans text-body font-semibold text-ink">{title}</h3>
       <p className="mt-1 max-w-md text-small text-muted">{error?.message ?? 'Please try again.'}</p>
       {onRetry && (
         <Button variant="outline" leftIcon={RotateCw} onClick={onRetry} className="mt-5">Try again</Button>

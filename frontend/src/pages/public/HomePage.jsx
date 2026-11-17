@@ -32,7 +32,7 @@ function Masthead() {
   return (
     <div className="masthead-grid h-[44svh] max-h-[480px] min-h-[320px]">
       <div className="overflow-hidden [grid-area:p1]"><Photo photo={photoA} eager className="motion-safe:animate-drift" /></div>
-      <div className="bg-primary [grid-area:blue]" />
+      <div className="bg-surface-3 [grid-area:blue]" />
       <div className="relative overflow-hidden [grid-area:ui]" style={{ background: finora.preview.tint }}>
         <div className="absolute left-[6%] top-[14%] w-[120%] lg:top-[12%] lg:w-[118%]"><ProjectPreview project={finora} /></div>
         <div className="absolute -bottom-[34%] right-[5%] hidden w-[26%] lg:block"><ProjectPreview project={wellnest} device="mobile" /></div>
@@ -83,7 +83,7 @@ function ServicesSection() {
             <p data-reveal style={{ '--reveal-index': 1 }} className="mt-5 max-w-md text-lead text-ink">
               Six services, one team. Designers and engineers work on the same project from the first day.
             </p>
-            <Link data-reveal style={{ '--reveal-index': 2 }} to="/services" className="mt-6 inline-flex items-center gap-1.5 rounded-sm text-small font-semibold text-primary hover:underline underline-offset-4">
+            <Link data-reveal style={{ '--reveal-index': 2 }} to="/services" className="mt-6 inline-flex items-center gap-2 rounded-sm text-small font-semibold text-primary hover:underline underline-offset-4">
               See every service in detail <ArrowRight aria-hidden="true" className="size-4" />
             </Link>
           </div>
@@ -92,13 +92,13 @@ function ServicesSection() {
           {services.map((service, i) => (
             <li key={service.slug} data-reveal style={{ '--reveal-index': i % 2 }} className="group flex flex-col">
               <div className="flex items-center gap-3">
-                <span className={cn('grid size-11 shrink-0 place-items-center rounded-md text-ink', service.tint === 'bg-surface-3' ? 'bg-surface' : service.tint)}>
+                <span className="grid size-11 shrink-0 place-items-center rounded-md bg-surface text-ink ring-1 ring-border">
                   <service.icon aria-hidden="true" className="size-5" />
                 </span>
                 <h3 className="font-display text-h3 font-bold text-ink">{service.name}</h3>
               </div>
               <p className="mt-4 text-body text-ink">{service.short}</p>
-              <Link to={`/services#${service.slug}`} className="mt-4 inline-flex w-fit items-center gap-1.5 rounded-sm text-small font-semibold text-primary hover:underline underline-offset-4">
+              <Link to={`/services#${service.slug}`} className="mt-4 inline-flex w-fit items-center gap-2 rounded-sm text-small font-semibold text-primary hover:underline underline-offset-4">
                 Learn more<span className="visually-hidden"> about {service.name}</span>
                 <ArrowRight aria-hidden="true" className="size-4 transition-transform group-hover:translate-x-0.5" />
               </Link>
@@ -137,7 +137,7 @@ function WorkBlock({ project, index }) {
           <h3 id={`work-${project.slug}`} className="mt-2 font-display text-h2 font-bold text-ink">{project.name}</h3>
           <p className="mt-3 text-body text-ink">{project.description}</p>
           <TechList tech={project.tech} className="mt-4" />
-          <Link to={`/work/${project.slug}`} className="group mt-6 inline-flex items-center gap-1.5 rounded-sm text-small font-semibold text-primary hover:underline underline-offset-4">
+          <Link to={`/work/${project.slug}`} className="group mt-6 inline-flex items-center gap-2 rounded-sm text-small font-semibold text-primary hover:underline underline-offset-4">
             View case study<span className="visually-hidden">: {project.name}</span>
             <ArrowUpRight aria-hidden="true" className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
           </Link>
@@ -208,14 +208,14 @@ function PlaygroundSection() {
 
 export function ClosingCta({ title = 'Have a project in mind?', text = 'Tell us what you are building. We reply to every inquiry within two working days.' }) {
   return (
-    <section aria-labelledby="cta-title" className="bg-primary text-primary-ink">
+    <section aria-labelledby="cta-title" className="bg-surface-3 text-ink">
       <div className="page-container flex min-h-[70svh] flex-col justify-between gap-16 py-20 lg:min-h-[80svh] lg:py-28">
         <h2 id="cta-title" data-reveal className="max-w-[14ch] font-display text-display font-extrabold">{title}</h2>
         <div data-reveal className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
           <p className="max-w-md text-lead">{text}</p>
           <Link
             to="/contact"
-            className="inline-flex h-14 items-center justify-center gap-2 rounded-md bg-bg px-7 text-body font-semibold text-ink transition-transform hover:-translate-y-0.5 active:translate-y-px focus-visible:outline-bg"
+            className="inline-flex h-14 items-center justify-center gap-2 rounded-md bg-primary px-7 text-body font-semibold text-primary-ink shadow-sm transition-[background-color,transform,box-shadow] hover:-translate-y-0.5 hover:bg-primary-hover hover:shadow-md active:translate-y-px"
           >
             Start a project <ArrowRight aria-hidden="true" className="size-5" />
           </Link>

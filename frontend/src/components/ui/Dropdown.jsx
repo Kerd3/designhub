@@ -86,14 +86,14 @@ export function Dropdown({ renderTrigger, items, header, align = 'end', classNam
           aria-label={menuLabel}
           onKeyDown={onMenuKeyDown}
           className={cn(
-            'absolute top-full z-40 mt-2 min-w-56 animate-dialog-in rounded-lg bg-surface p-1.5 shadow-lg ring-1 ring-border',
-            align === 'end' ? 'right-0' : 'left-0',
+            'absolute top-full z-40 mt-2 min-w-56 animate-pop-in rounded-lg bg-surface p-2 shadow-lg ring-1 ring-border',
+            align === 'end' ? 'right-0 origin-top-right' : 'left-0 origin-top-left',
           )}
         >
-          {header && <div className="px-3 pb-2 pt-1.5">{header}</div>}
+          {header && <div className="px-3 pb-2 pt-2">{header}</div>}
           {items.map((item, i) =>
             item.divider ? (
-              <div key={`d${i}`} role="separator" className="my-1.5 h-px bg-border" />
+              <div key={`d${i}`} role="separator" className="my-2 h-px bg-border" />
             ) : (
               <button
                 key={item.label}
@@ -103,7 +103,7 @@ export function Dropdown({ renderTrigger, items, header, align = 'end', classNam
                 aria-disabled={item.disabled || undefined}
                 onClick={() => select(item)}
                 className={cn(
-                  'flex w-full items-center gap-2.5 rounded-md px-3 py-2 text-left text-small outline-none transition-colors',
+                  'flex w-full items-center gap-3 rounded-md px-3 py-2 text-left text-small outline-none transition-colors',
                   'hover:bg-surface-2 focus-visible:bg-surface-2 focus-visible:outline-none aria-disabled:opacity-50',
                   item.tone === 'danger' ? 'text-danger' : 'text-ink',
                 )}

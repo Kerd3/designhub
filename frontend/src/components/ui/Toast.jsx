@@ -59,10 +59,10 @@ export function ToastProvider({ children }) {
               onBlur={() => schedule(toast.id, 3000)}
               className="pointer-events-auto flex w-full max-w-sm animate-toast-in items-start gap-3 rounded-lg bg-surface p-4 shadow-lg ring-1 ring-border"
             >
-              <style.icon aria-hidden="true" className={cn('mt-0.5 size-5 shrink-0', style.accent)} />
+              <style.icon aria-hidden="true" className={cn('icon-align-5 size-5 shrink-0', style.accent)} />
               <div className="min-w-0 flex-1">
                 <p className="text-small font-semibold text-ink"><span className="visually-hidden">{style.label}: </span>{toast.title}</p>
-                {toast.description && <p className="mt-0.5 text-small text-muted">{toast.description}</p>}
+                {toast.description && <p className="mt-1 text-small text-muted">{toast.description}</p>}
               </div>
               <button type="button" onClick={() => dismiss(toast.id)} aria-label="Dismiss notification" className="-m-1 grid size-8 shrink-0 place-items-center rounded-md text-muted hover:bg-surface-2 hover:text-ink">
                 <X aria-hidden="true" className="size-4" />

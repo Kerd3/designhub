@@ -15,7 +15,7 @@ export function NavigationItem({ to, icon: Icon, label, count, end = false, onNa
         )
       }
     >
-      {Icon && <Icon aria-hidden="true" className="size-[18px] shrink-0" />}
+      {Icon && <Icon aria-hidden="true" className="size-5 shrink-0" />}
       <span className="flex-1 truncate">{label}</span>
       {count > 0 && (
         <span className="rounded-full bg-surface-3 px-2 text-caption font-semibold tabular-nums text-ink group-aria-[current=page]:bg-primary group-aria-[current=page]:text-primary-ink">

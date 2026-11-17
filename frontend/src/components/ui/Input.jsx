@@ -21,7 +21,7 @@ export function Input({
             ref={ref}
             {...aria}
             {...rest}
-            className={cn(controlBase, size === 'sm' ? 'h-9 px-3 text-small' : 'h-11 px-3.5', LeftIcon && 'pl-9', rightSlot && 'pr-11', inputClassName)}
+            className={cn(controlBase, size === 'sm' ? 'h-9 px-3 text-small' : 'h-11 px-4', LeftIcon && 'pl-9', rightSlot && 'pr-11', inputClassName)}
           />
           {rightSlot && <div className="absolute inset-y-0 right-1 flex items-center">{rightSlot}</div>}
         </div>

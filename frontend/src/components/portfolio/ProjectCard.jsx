@@ -6,9 +6,9 @@ import { ProjectPreview } from './ProjectPreview.jsx';
 
 export function TechList({ tech, className }) {
   return (
-    <ul aria-label="Technologies" className={cn('flex flex-wrap gap-1.5', className)}>
+    <ul aria-label="Technologies" className={cn('flex flex-wrap gap-2', className)}>
       {tech.map((t) => (
-        <li key={t} className="rounded-sm bg-surface-2 px-2 py-0.5 text-caption font-medium text-muted">{t}</li>
+        <li key={t} className="rounded-sm bg-surface-2 px-2 py-1 text-caption font-medium text-muted">{t}</li>
       ))}
     </ul>
   );
@@ -35,9 +35,9 @@ export function ProjectCard({ project, headingLevel: H = 'h3', index = 0 }) {
           {project.name}
         </Link>
       </H>
-      <p className="mt-1.5 text-body text-muted">{project.description}</p>
+      <p className="mt-2 text-body text-muted">{project.description}</p>
       <TechList tech={project.tech} className="mt-4" />
-      <span aria-hidden="true" className="mt-4 inline-flex items-center gap-1.5 text-small font-semibold text-primary">
+      <span aria-hidden="true" className="mt-4 inline-flex items-center gap-2 text-small font-semibold text-primary">
         View case study <ArrowUpRight className="size-4 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
       </span>
       <span aria-hidden="true" className="pointer-events-none absolute -inset-2 rounded-xl ring-2 ring-primary opacity-0 group-has-[:focus-visible]:opacity-100" />

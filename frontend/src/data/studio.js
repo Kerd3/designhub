@@ -23,7 +23,7 @@ export const services = [
     description: 'We build interfaces in React with a shared component library, so the hundredth screen is as consistent as the first. Performance budgets and accessibility checks run on every change.',
     includes: ['React component architecture', 'Responsive, accessible markup', 'Performance budgets', 'Automated browser testing', 'Hand-off documentation'],
     timeline: '4–12 weeks',
-    tint: 'bg-primary-soft',
+    tint: 'bg-surface-3',
   },
   {
     slug: 'ui-ux-design',
@@ -34,7 +34,7 @@ export const services = [
     description: 'We start with the people who will use the product: interviews, task analysis and usability tests. Flows and prototypes are tested before anything is built.',
     includes: ['User interviews and research synthesis', 'User flows and wireframes', 'Interactive prototypes', 'Usability testing', 'Accessibility review'],
     timeline: '3–8 weeks',
-    tint: 'bg-success-soft',
+    tint: 'bg-accent-soft',
   },
   {
     slug: 'web-application-development',
@@ -45,7 +45,7 @@ export const services = [
     description: 'Customer portals, dashboards and internal tools, built end to end: interface, API and database. We favour boring, proven technology and leave you with code your team can own.',
     includes: ['Product scoping and architecture', 'React frontend and REST APIs', 'PostgreSQL data modelling', 'Authentication and roles', 'Deployment and monitoring'],
     timeline: '10–20 weeks',
-    tint: 'bg-info-soft',
+    tint: 'bg-surface-3',
   },
   {
     slug: 'design-systems',
@@ -56,7 +56,7 @@ export const services = [
     description: 'One source of truth for colour, type, spacing and components, in design files and in code. We document it so new team members can use it on day one.',
     includes: ['Design token architecture', 'Component library in Figma and React', 'Usage and accessibility guidelines', 'Contribution workflow', 'Adoption support for teams'],
     timeline: '8–16 weeks',
-    tint: 'bg-warning-soft',
+    tint: 'bg-accent-soft',
   },
   {
     slug: 'api-integration',

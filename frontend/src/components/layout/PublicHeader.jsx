@@ -24,7 +24,7 @@ function DesktopLink({ to, label, end }) {
       className={({ isActive }) =>
         cn(
           'relative inline-flex h-11 items-center px-3 text-small font-medium transition-colors',
-          'after:absolute after:inset-x-3 after:bottom-1.5 after:h-0.5 after:origin-left after:rounded-full after:bg-primary after:transition-transform after:duration-200',
+          'after:absolute after:inset-x-3 after:bottom-2 after:h-0.5 after:origin-left after:rounded-full after:bg-primary after:transition-transform after:duration-200',
           isActive ? 'text-ink after:scale-x-100' : 'text-muted hover:text-ink after:scale-x-0 hover:after:scale-x-100',
         )
       }
@@ -98,7 +98,7 @@ export function PublicHeader() {
         </nav>
         <div className="hidden items-center gap-2 lg:flex">
           <Button to="/workspace/login" variant="ghost" leftIcon={LayoutDashboard}>Workspace login</Button>
-          <Button to="/contact" rightIcon={ArrowRight}>Start a project</Button>
+          <Button to="/contact" variant="secondary" rightIcon={ArrowRight}>Start a project</Button>
         </div>
         <button
           type="button"

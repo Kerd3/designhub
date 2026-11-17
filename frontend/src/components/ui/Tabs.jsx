@@ -47,13 +47,13 @@ export function Tabs({ tabs, value, onChange, defaultValue, label, className, pa
               tabIndex={selected ? 0 : -1}
               onClick={() => activate(tab.id)}
               className={cn(
-                'inline-flex h-9 shrink-0 items-center gap-2 rounded-md px-3.5 text-small font-medium transition-colors',
+                'inline-flex h-9 shrink-0 items-center gap-2 rounded-md px-4 text-small font-medium transition-colors',
                 selected ? 'bg-surface text-ink shadow-sm' : 'text-muted hover:text-ink',
               )}
             >
               {tab.label}
               {tab.count !== undefined && (
-                <span className={cn('rounded-full px-1.5 text-caption tabular-nums', selected ? 'bg-primary-soft text-primary' : 'bg-surface-3 text-muted')}>{tab.count}</span>
+                <span className={cn('rounded-full px-2 text-caption tabular-nums', selected ? 'bg-primary-soft text-primary' : 'bg-surface-3 text-muted')}>{tab.count}</span>
               )}
             </button>
           );

@@ -25,11 +25,11 @@ function ClientDetail({ client, projects, onEdit, onDelete }) {
         </div>
       </div>
       <dl className="grid gap-4 sm:grid-cols-2">
-        <div><dt className="text-small text-muted">Contact person</dt><dd className="mt-0.5 font-medium text-ink">{client.contactPerson}</dd></div>
-        <div><dt className="text-small text-muted">Client since</dt><dd className="mt-0.5 font-medium text-ink">{formatDate(client.clientSince)}</dd></div>
-        <div className="sm:col-span-2"><dt className="text-small text-muted">Email</dt><dd className="mt-0.5"><a href={`mailto:${client.email}`} className="inline-flex items-center gap-1.5 font-medium text-primary hover:underline"><Mail aria-hidden="true" className="size-4" />{client.email}</a></dd></div>
-        {client.phone && <div><dt className="text-small text-muted">Phone</dt><dd className="mt-0.5"><a href={`tel:${client.phone.replace(/[^+\d]/g, '')}`} className="inline-flex items-center gap-1.5 font-medium text-primary hover:underline"><Phone aria-hidden="true" className="size-4" />{client.phone}</a></dd></div>}
-        {client.website && <div><dt className="text-small text-muted">Website</dt><dd className="mt-0.5 flex items-center gap-1.5 font-medium text-ink break-all"><Globe aria-hidden="true" className="size-4 shrink-0 text-muted" />{client.website.replace(/^https?:\/\//, '')}</dd></div>}
+        <div><dt className="text-small text-muted">Contact person</dt><dd className="mt-1 font-medium text-ink">{client.contactPerson}</dd></div>
+        <div><dt className="text-small text-muted">Client since</dt><dd className="mt-1 font-medium text-ink">{formatDate(client.clientSince)}</dd></div>
+        <div className="sm:col-span-2"><dt className="text-small text-muted">Email</dt><dd className="mt-1"><a href={`mailto:${client.email}`} className="inline-flex items-center gap-2 font-medium text-primary hover:underline"><Mail aria-hidden="true" className="size-4" />{client.email}</a></dd></div>
+        {client.phone && <div><dt className="text-small text-muted">Phone</dt><dd className="mt-1"><a href={`tel:${client.phone.replace(/[^+\d]/g, '')}`} className="inline-flex items-center gap-2 font-medium text-primary hover:underline"><Phone aria-hidden="true" className="size-4" />{client.phone}</a></dd></div>}
+        {client.website && <div><dt className="text-small text-muted">Website</dt><dd className="mt-1 flex items-center gap-2 font-medium text-ink break-all"><Globe aria-hidden="true" className="size-4 shrink-0 text-muted" />{client.website.replace(/^https?:\/\//, '')}</dd></div>}
       </dl>
       {client.notes && <div><h3 className="font-sans text-small font-semibold text-ink">Notes</h3><p className="mt-1 text-body text-ink">{client.notes}</p></div>}
       <div>

@@ -25,7 +25,10 @@ export function WorkspaceTopbar({ title, onOpenMenu, menuOpen, onLogout, notific
     <header className="sticky top-0 z-20 bg-bg/95 ring-1 ring-border lg:bg-bg">
       <div className="flex h-16 items-center gap-2 px-3 sm:px-6">
         <IconButton icon={Menu} label="Open navigation" className="lg:hidden" onClick={onOpenMenu} aria-expanded={menuOpen} aria-controls="workspace-drawer" tooltip={false} />
-        <p className="min-w-0 flex-1 truncate font-display text-[1.0625rem] font-bold text-ink" aria-hidden="true">{title}</p>
+        <p className="min-w-0 flex-1 truncate text-small text-muted" aria-hidden="true">
+          <span className="hidden sm:inline">{settings.workspace.name} <span className="px-1 text-subtle">/</span> </span>
+          <span className="font-medium text-ink">{title}</span>
+        </p>
 
         <button
           type="button"
@@ -34,7 +37,7 @@ export function WorkspaceTopbar({ title, onOpenMenu, menuOpen, onLogout, notific
         >
           <Search aria-hidden="true" className="size-4" />
           <span className="flex-1 text-left">Search workspace</span>
-          <kbd className="rounded-sm bg-surface-2 px-1.5 text-caption font-medium">{isMac ? '⌘K' : 'Ctrl K'}</kbd>
+          <kbd className="rounded-sm bg-surface-2 px-2 text-caption font-medium">{isMac ? '⌘K' : 'Ctrl K'}</kbd>
         </button>
         <IconButton icon={Search} label="Search workspace" className="md:hidden" onClick={() => setSearchOpen(true)} />
 
@@ -55,7 +58,7 @@ export function WorkspaceTopbar({ title, onOpenMenu, menuOpen, onLogout, notific
             { label: 'Exit demo', icon: LogOut, onSelect: onLogout, tone: 'danger' },
           ]}
           renderTrigger={(props) => (
-            <button type="button" {...props} aria-label={`Account menu for ${settings.profile.name}`} className="ml-1 inline-flex h-10 items-center gap-2 rounded-md pl-1 pr-1.5 hover:bg-surface-2 sm:pr-2">
+            <button type="button" {...props} aria-label={`Account menu for ${settings.profile.name}`} className="ml-1 inline-flex h-10 items-center gap-2 rounded-md pl-1 pr-2 hover:bg-surface-2 sm:pr-2">
               <Avatar name={settings.profile.name} size="sm" decorative />
               <span className="hidden max-w-32 truncate text-small font-medium text-ink xl:block">{settings.profile.name}</span>
               <ChevronDown aria-hidden="true" className="hidden size-4 text-muted sm:block" />

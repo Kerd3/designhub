@@ -29,7 +29,7 @@ function SidebarContent({ counts, onNavigate }) {
         <Wordmark to="/workspace" destination="workspace overview" subtitle={settings.workspace.name} onClick={onNavigate} />
       </div>
       <nav aria-label="Workspace" className="flex-1 overflow-y-auto px-3 py-4 scrollbar-thin">
-        <ul className="flex flex-col gap-0.5">
+        <ul className="flex flex-col gap-1">
           {WORKSPACE_NAV.map((item) => (
             <li key={item.to}>
               <NavigationItem to={item.to} icon={item.icon} label={item.label} end={item.end} count={item.countKey ? counts?.[item.countKey] : undefined} onNavigate={onNavigate} />
@@ -38,11 +38,11 @@ function SidebarContent({ counts, onNavigate }) {
         </ul>
       </nav>
       <div className="flex flex-col gap-3 p-4">
-        <p className="flex items-start gap-2 rounded-md bg-surface-2 px-3 py-2.5 text-caption text-muted">
-          <Database aria-hidden="true" className="mt-0.5 size-3.5 shrink-0" />
+        <p className="flex items-start gap-2 rounded-md bg-surface-2 px-3 py-3 text-caption text-muted">
+          <Database aria-hidden="true" className="icon-align-4 size-4 shrink-0" />
           <span>{dataSourceLabel}. Fictional records; changes stay in this browser.</span>
         </p>
-        <Link to="/" className="inline-flex items-center gap-1.5 rounded-sm px-1 text-small font-medium text-muted hover:text-ink">
+        <Link to="/" className="inline-flex items-center gap-2 rounded-sm px-1 text-small font-medium text-muted hover:text-ink">
           <ExternalLink aria-hidden="true" className="size-4" /> View public website
         </Link>
       </div>

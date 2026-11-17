@@ -44,14 +44,14 @@ export default function CaseStudyPage() {
         </h1>
         <div className="axis-grid mt-8">
           <dl className="grid grid-cols-2 gap-x-6 gap-y-4 text-small lg:max-w-sm lg:pr-8">
-            <div><dt className="text-muted">Category</dt><dd className="mt-0.5 font-medium text-ink">{project.category}</dd></div>
-            <div><dt className="text-muted">Year</dt><dd className="mt-0.5 font-medium text-ink">{project.year}</dd></div>
-            <div className="col-span-2"><dt className="text-muted">Stack</dt><dd className="mt-1.5"><TechList tech={project.tech} /></dd></div>
+            <div><dt className="text-muted">Category</dt><dd className="mt-1 font-medium text-ink">{project.category}</dd></div>
+            <div><dt className="text-muted">Year</dt><dd className="mt-1 font-medium text-ink">{project.year}</dd></div>
+            <div className="col-span-2"><dt className="text-muted">Stack</dt><dd className="mt-2"><TechList tech={project.tech} /></dd></div>
           </dl>
           <div>
             <p className="max-w-[48ch] text-lead text-ink">{project.description}</p>
-            <p className="mt-6 flex max-w-[60ch] gap-2.5 rounded-md bg-info-soft px-4 py-3 text-small text-ink">
-              <Info aria-hidden="true" className="mt-0.5 size-4 shrink-0 text-info" />
+            <p className="mt-6 flex max-w-[60ch] gap-3 rounded-md bg-info-soft px-4 py-3 text-small text-ink">
+              <Info aria-hidden="true" className="icon-align-4 size-4 shrink-0 text-info" />
               <span>Fictional demonstration project. The client, people and outcomes are invented to show the studio's process; no real engagement is described.</span>
             </p>
           </div>
@@ -73,7 +73,7 @@ export default function CaseStudyPage() {
           <ul className="flex flex-col gap-4">
             {project.goals.map((goal) => (
               <li key={goal} className="flex gap-3 text-body text-ink">
-                <span aria-hidden="true" className="mt-2.5 size-2 shrink-0 rounded-full bg-primary" />
+                <span aria-hidden="true" className="icon-align-2 size-2 shrink-0 rounded-full bg-ink" />
                 {goal}
               </li>
             ))}

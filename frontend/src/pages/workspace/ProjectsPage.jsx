@@ -28,7 +28,7 @@ const STATUS_OPTIONS = [{ value: 'active', label: 'Active (in progress or review
 function DueText({ project }) {
   const overdue = project.status !== 'completed' && daysUntil(project.dueDate) < 0;
   return (
-    <span className={cn('inline-flex items-center gap-1.5 text-small', overdue ? 'font-semibold text-danger' : 'text-muted')}>
+    <span className={cn('inline-flex items-center gap-2 text-small', overdue ? 'font-semibold text-danger' : 'text-muted')}>
       <CalendarDays aria-hidden="true" className="size-4" />
       {project.status === 'completed' ? `Delivered ${formatShortDate(project.dueDate)}` : relativeDue(project.dueDate)}
     </span>
@@ -66,7 +66,7 @@ function ProjectGridCard({ project, client, members, onEdit, onDelete }) {
         </div>
         <ProjectActions project={project} onEdit={onEdit} onDelete={onDelete} />
       </div>
-      <div className="mt-3 flex flex-wrap gap-1.5"><StatusBadge status={project.status} /><PriorityBadge priority={project.priority} /></div>
+      <div className="mt-3 flex flex-wrap gap-2"><StatusBadge status={project.status} /><PriorityBadge priority={project.priority} /></div>
       <p className="mt-3 line-clamp-2 text-small text-muted">{project.description}</p>
       <div className="mt-auto pt-5">
         <ProgressBar value={project.progress} label={`${project.name} completion`} />
@@ -179,7 +179,7 @@ export default function ProjectsPage() {
         <Select label="Status" size="sm" placeholder="All statuses" value={status} onChange={(e) => setParam('status', e.target.value)} options={STATUS_OPTIONS} className="md:w-52" />
         <Select label="Priority" size="sm" placeholder="All priorities" value={priority} onChange={(e) => setParam('priority', e.target.value)} options={PRIORITIES.map((p) => ({ value: p, label: labelFor(p) }))} className="md:w-40" />
         <Select label="Sort by" size="sm" value={sort} onChange={(e) => setParam('sort', e.target.value === 'due-asc' ? '' : e.target.value)} options={SORTS} className="md:w-56" />
-        <div className="flex flex-col gap-1.5 md:ml-auto">
+        <div className="flex flex-col gap-2 md:ml-auto">
           <span className="text-small font-medium text-ink" id="view-label">View</span>
           <SegmentedControl
             label="View"
