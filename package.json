@@ -1,0 +1,22 @@
+{
+  "name": "designhub",
+  "private": true,
+  "version": "1.0.0",
+  "description": "DesignHub Studio — responsive studio website and internal project workspace (portfolio project).",
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "engines": {
+    "node": ">=22.22.0"
+  },
+  "scripts": {
+    "dev": "npm run dev -w frontend",
+    "dev:api": "npm run dev -w backend",
+    "build": "npm run build -w frontend",
+    "preview": "npm run preview -w frontend",
+    "test:e2e": "npm run test:e2e -w frontend",
+    "test:api": "npm test -w backend",
+    "db:seed": "npm run db:seed -w backend"
+  }
+}

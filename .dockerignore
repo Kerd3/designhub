@@ -1,0 +1,8 @@
+**/node_modules
+**/dist
+**/.env
+frontend/test-results
+frontend/playwright-report
+.taste-skill
+.claude
+docs/screenshots

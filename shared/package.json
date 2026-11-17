@@ -1,0 +1,6 @@
+{
+  "name": "designhub-shared",
+  "private": true,
+  "type": "module",
+  "description": "Demo dataset, domain constants and validation schemas shared by frontend and backend."
+}

@@ -1,0 +1,285 @@
+@import "tailwindcss";
+
+/* Class-based dark variant so the workspace Appearance setting can control it. */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* ==========================================================================
+   DESIGN TOKENS
+   Every colour, type size, radius and shadow in the app comes from here.
+   Tailwind's default palettes are cleared so components cannot drift.
+   Spacing keeps Tailwind's 4px base: 1=4px 2=8px 3=12px 4=16px 6=24px
+   8=32px 12=48px 16=64px.
+   ========================================================================== */
+@theme {
+  --color-*: initial;
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* Neutrals */
+  --color-bg: #f6f4ef;            /* warm off-white page ground */
+  --color-surface: #ffffff;       /* cards, panels, inputs */
+  --color-surface-2: #efece5;     /* one tone step down */
+  --color-surface-3: #e5e1d7;     /* two tone steps down */
+  --color-border: #dedad1;
+  --color-border-strong: #bfbab0;
+  --color-ink: #16171a;           /* primary text */
+  --color-muted: #5b5e66;         /* secondary text, 5.9:1 on bg */
+  --color-subtle: #7b7e85;        /* icons and placeholders only */
+  --color-inverse: #16171a;       /* inverted fields */
+  --color-inverse-ink: #f6f4ef;
+  --color-inverse-muted: #b4b2ab;   /* 8.6:1 on inverse */
+  --color-inverse-accent: #a9bbe8;  /* 9.4:1 on inverse */
+
+  /* Brand */
+  --color-primary: #36539a;       /* muted blue, 7.3:1 with white */
+  --color-primary-hover: #2b4482;
+  --color-primary-soft: #e3e8f3;
+  --color-primary-ink: #ffffff;
+  --color-secondary: #16171a;     /* charcoal */
+  --color-secondary-hover: #2c2e33;
+  --color-accent: #c8b48e;        /* sand, used as a field colour */
+  --color-accent-soft: #ece4d3;
+
+  /* Feedback */
+  --color-success: #2a6e47;   /* 5.2:1 on success-soft */
+  --color-success-soft: #e1efe6;
+  --color-warning: #8f5b0c;
+  --color-warning-soft: #f6ead6;
+  --color-danger: #b3261e;
+  --color-danger-hover: #951f19;
+  --color-danger-soft: #f8e2df;
+  --color-info: #286688;
+  --color-info-soft: #deedf4;
+
+  /* Charts: categorical slots, fixed order, validated with the dataviz
+     validator (lightness, chroma, CVD and normal-vision separation pass in both
+     modes; light-mode contrast WARN is met with direct labels + table view). */
+  --color-chart-1: #2a78d6;
+  --color-chart-2: #eb6834;
+  --color-chart-3: #1baf7a;
+  --color-chart-4: #eda100;
+  --color-chart-grid: #e1e0d9;
+  --color-chart-axis: #c3c2b7;
+
+  /* Typography */
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Manrope", "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --text-*: initial;
+  --text-display: clamp(2.375rem, 1rem + 5.6vw, 6rem);
+  --text-display--line-height: 0.98;
+  --text-display--letter-spacing: -0.04em;
+  --text-h1: clamp(2rem, 1.35rem + 2.7vw, 3.5rem);
+  --text-h1--line-height: 1.04;
+  --text-h1--letter-spacing: -0.03em;
+  --text-h2: clamp(1.625rem, 1.25rem + 1.5vw, 2.5rem);
+  --text-h2--line-height: 1.12;
+  --text-h2--letter-spacing: -0.022em;
+  --text-h3: clamp(1.1875rem, 1.08rem + 0.45vw, 1.5rem);
+  --text-h3--line-height: 1.28;
+  --text-h3--letter-spacing: -0.012em;
+  --text-lead: clamp(1.125rem, 1.04rem + 0.38vw, 1.375rem);
+  --text-lead--line-height: 1.5;
+  --text-body: 1rem;
+  --text-body--line-height: 1.6;
+  --text-small: 0.875rem;
+  --text-small--line-height: 1.5;
+  --text-caption: 0.8125rem;
+  --text-caption--line-height: 1.4;
+
+  /* Radius */
+  --radius-*: initial;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+
+  /* Shadows: only for things that float (menus, dialogs, toasts) or are lifted on hover */
+  --shadow-*: initial;
+  --shadow-sm: 0 1px 2px rgb(22 23 26 / 0.06);
+  --shadow-md: 0 4px 16px -4px rgb(22 23 26 / 0.12), 0 1px 3px rgb(22 23 26 / 0.06);
+  --shadow-lg: 0 18px 48px -12px rgb(22 23 26 / 0.22), 0 4px 10px rgb(22 23 26 / 0.06);
+
+  /* Motion */
+  --ease-out-strong: cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-rise: rise 900ms var(--ease-out-strong) both;
+  --animate-fade-up: fade-up 600ms var(--ease-out-strong) both;
+  --animate-fade-in: fade-in 180ms ease-out both;
+  --animate-dialog-in: dialog-in 220ms var(--ease-out-strong) both;
+  --animate-drawer-in: drawer-in 260ms var(--ease-out-strong) both;
+  --animate-panel-in: panel-in 260ms var(--ease-out-strong) both;
+  --animate-toast-in: toast-in 260ms var(--ease-out-strong) both;
+  --animate-shimmer: shimmer 1.4s ease-in-out infinite;
+  --animate-drift: drift 18s ease-in-out infinite alternate;
+  @keyframes drift { from { transform: scale(1.04); } to { transform: scale(1.14) translate(-2%, -1.5%); } }
+
+  @keyframes rise { from { transform: translateY(105%); } to { transform: translateY(0); } }
+  @keyframes fade-up { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+  @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes dialog-in { from { opacity: 0; transform: translateY(12px) scale(0.98); } to { opacity: 1; transform: none; } }
+  @keyframes drawer-in { from { transform: translateX(-100%); } to { transform: none; } }
+  @keyframes panel-in { from { transform: translateX(100%); } to { transform: none; } }
+  @keyframes toast-in { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+  @keyframes shimmer { 0%, 100% { opacity: 1; } 50% { opacity: 0.55; } }
+}
+
+/* Dark theme (workspace Appearance setting). Same token names, new values. */
+@layer base {
+  [data-theme="dark"] {
+    --color-bg: #121316;
+    --color-surface: #1a1b1f;
+    --color-surface-2: #212328;
+    --color-surface-3: #2a2c32;
+    --color-border: #30333a;
+    --color-border-strong: #474a53;
+    --color-ink: #ecebe6;
+    --color-muted: #a4a7ae;
+    --color-subtle: #868990;
+    --color-primary: #93a9e2;
+    --color-primary-hover: #aebfeb;
+    --color-primary-soft: #232c44;
+    --color-primary-ink: #121316;
+    --color-secondary: #ecebe6;
+    --color-secondary-hover: #d6d5cf;
+    --color-success: #74c495;
+    --color-success-soft: #1b2c22;
+    --color-warning: #e3b061;
+    --color-warning-soft: #30271a;
+    --color-danger: #f2918a;
+    --color-danger-hover: #f6aaa4;
+    --color-danger-soft: #35201f;
+    --color-info: #77b8dc;
+    --color-info-soft: #1a2a35;
+    --color-chart-1: #3987e5;
+    --color-chart-2: #d95926;
+    --color-chart-3: #199e70;
+    --color-chart-4: #c98500;
+    --color-chart-grid: #2c2c2a;
+    --color-chart-axis: #383835;
+    color-scheme: dark;
+  }
+}
+
+/* ==========================================================================
+   BASE
+   ========================================================================== */
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    scroll-padding-top: 5rem;
+  }
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    text-wrap: balance;
+  }
+  p { text-wrap: pretty; }
+  ::selection { background: var(--color-primary); color: var(--color-primary-ink); }
+
+  /* One focus style for every interactive element: visible, 3:1+ against all surfaces. */
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+  [data-focus-inset]:focus-visible { outline-offset: -2px; }
+
+  img, svg, video { display: block; max-width: 100%; }
+  img { height: auto; }
+  button { cursor: pointer; }
+  button:disabled { cursor: not-allowed; }
+  input, select, textarea { font: inherit; color: inherit; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ==========================================================================
+   LAYOUT UTILITIES
+   ========================================================================== */
+
+/* Page container: one pair of margins used everywhere (16 / 24 / 32px). */
+@utility page-container {
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: 1rem;
+  @media (width >= 40rem) { padding-inline: 1.5rem; }
+  @media (width >= 64rem) { padding-inline: 2rem; }
+}
+
+/* The editorial axis: headings start at 42% of the content width on large screens. */
+@utility axis-grid {
+  display: grid;
+  gap: 1.5rem;
+  @media (width >= 64rem) {
+    grid-template-columns: minmax(0, 42fr) minmax(0, 58fr);
+    column-gap: 0;
+  }
+}
+
+@utility section-space {
+  padding-block: 5rem;
+  @media (width >= 64rem) { padding-block: 8.5rem; }
+}
+
+@utility visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@utility scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border-strong) transparent;
+}
+
+/* Home masthead: a gutterless mosaic of photographs, interface and flat colour fields. */
+.masthead-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: 2fr 3fr;
+  grid-template-areas: "p1 p1 blue" "ui ui ui";
+}
+@media (width >= 64rem) {
+  .masthead-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    grid-template-areas: "p1 p1 blue ui ui p2" "p3 sand blue ui ui ink";
+  }
+}
+
+/* Entrance used by the Reveal component: content is visible without JS. */
+.reveal-ready [data-reveal] { opacity: 0; transform: translateY(24px); }
+.reveal-ready [data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+  transition: opacity 700ms var(--ease-out-strong), transform 700ms var(--ease-out-strong);
+  transition-delay: calc(var(--reveal-index, 0) * 80ms);
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal-ready [data-reveal] { opacity: 1; transform: none; }
+}
