@@ -2,6 +2,8 @@
 
 **A responsive studio website and project workspace, built as a frontend and UI/UX portfolio project.**
 
+**Live demo: https://designhub-woad.vercel.app** (workspace: /workspace → *Use demo credentials*)
+
 DesignHub Studio is a fictional digital design and development studio. The project has two connected experiences:
 
 - **Public website:** home, services, portfolio with working filters, six case studies, about, and a working project-inquiry form.

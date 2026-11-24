@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Public pages only. The /workspace demo is excluded (robots.txt and noindex). Replace the domain when deploying. -->
+<!-- Public pages only. The /workspace demo is excluded (robots.txt and noindex). -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://designhub.example/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://designhub.example/services</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://designhub.example/work</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://designhub.example/work/finora</loc><priority>0.6</priority></url>
-  <url><loc>https://designhub.example/work/wellnest</loc><priority>0.6</priority></url>
-  <url><loc>https://designhub.example/work/marketly</loc><priority>0.6</priority></url>
-  <url><loc>https://designhub.example/work/routewise</loc><priority>0.6</priority></url>
-  <url><loc>https://designhub.example/work/tandem</loc><priority>0.6</priority></url>
-  <url><loc>https://designhub.example/work/harvest-table</loc><priority>0.6</priority></url>
-  <url><loc>https://designhub.example/about</loc><priority>0.6</priority></url>
-  <url><loc>https://designhub.example/contact</loc><priority>0.7</priority></url>
-  <url><loc>https://designhub.example/design-system</loc><priority>0.4</priority></url>
+  <url><loc>https://designhub-woad.vercel.app/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://designhub-woad.vercel.app/services</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://designhub-woad.vercel.app/work</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://designhub-woad.vercel.app/work/finora</loc><priority>0.6</priority></url>
+  <url><loc>https://designhub-woad.vercel.app/work/wellnest</loc><priority>0.6</priority></url>
+  <url><loc>https://designhub-woad.vercel.app/work/marketly</loc><priority>0.6</priority></url>
+  <url><loc>https://designhub-woad.vercel.app/work/routewise</loc><priority>0.6</priority></url>
+  <url><loc>https://designhub-woad.vercel.app/work/tandem</loc><priority>0.6</priority></url>
+  <url><loc>https://designhub-woad.vercel.app/work/harvest-table</loc><priority>0.6</priority></url>
+  <url><loc>https://designhub-woad.vercel.app/about</loc><priority>0.6</priority></url>
+  <url><loc>https://designhub-woad.vercel.app/contact</loc><priority>0.7</priority></url>
+  <url><loc>https://designhub-woad.vercel.app/design-system</loc><priority>0.4</priority></url>
 </urlset>
